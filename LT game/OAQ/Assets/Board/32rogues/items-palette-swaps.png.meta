@@ -1,0 +1,5438 @@
+fileFormatVersion: 2
+guid: 38f5e7376a6327c4b9e95db874ff4fe7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: items-palette-swaps_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1352
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7a57939fa3e424fb625ceb341cd498
+      internalID: -183415849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1351
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d6e12d6bdf9dcb4cb086f80ca43a6bd
+      internalID: -1940286298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1349
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 001472576001f9f41b79bee82a3c6c16
+      internalID: -1281843247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 1348
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5323cc096d3e44ba1a0361af7840e0
+      internalID: 1953482697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1348
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb5a7b9d9e4e9a4ea016a54ee02d0d1
+      internalID: -343632115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_5
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 1345
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7255c50622b8a644ba9a123208903e09
+      internalID: 834585430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_6
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1351
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca78fb57ac26fc448cad50c77090ef7
+      internalID: -1794098794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_7
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1319
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7acb17172f682549ab9683e23de82e7
+      internalID: -1744230166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_8
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1316
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875f1da647e00154dbdf30c44c8d4ea2
+      internalID: 1951417481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_9
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1316
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f750f3110a5e554cb20034aea18e5c9
+      internalID: 1497961559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_10
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1315
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e2cdb87ae9ca404a917cc82bc266e64
+      internalID: 352014557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_11
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1313
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab3cc8643085b54dbb6851f28171b97
+      internalID: -1840816103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_12
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1313
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d964b5eeb900bd4b8ba0bbe9c211bab
+      internalID: 682725932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_13
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1313
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c510a9a92b09d447bbcaab4977da943
+      internalID: -1070325621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_14
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1287
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d66844e78a0834ebb58bdcc7f59fd2
+      internalID: -51895748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_15
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1287
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f258f166f19784fb06359f942381bf
+      internalID: 830721225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_16
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1283
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5843f8f31d0703c40919dcc5937bea13
+      internalID: -715471111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_17
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1282
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e435a131f9430749a0eae6052a0c579
+      internalID: 1126631831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_18
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1284
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 129733e54e0817446bd31e384099400f
+      internalID: 677115811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_19
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1256
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499053145981e704781312fbbad0c639
+      internalID: -1203315015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_20
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1253
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd81e630c0456ee438e592f04b513187
+      internalID: -84251056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_21
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1251
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06c8aa851917dd42b28746a80961c9a
+      internalID: 1260619182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_22
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1250
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0255ff47a9193d5439df3084e15d5fff
+      internalID: -218232205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_23
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1253
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1fe8dc93d77840408b38fb1bcaf7ae5
+      internalID: 1420998567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_24
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1257
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5ad80101290fb49b65d0896299cd66
+      internalID: 435856275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_25
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1255
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d34d2bb77ea5d3743aff9f8546e1eae0
+      internalID: -1226826779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_26
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1223
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14cd91ae42e92964298bb99caa655e43
+      internalID: 1677556017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_27
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1221
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9816cb75bc9b88e4d9dda4af642b053f
+      internalID: -1105506247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_28
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1219
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1034ad84e7111fc42b1487bde66f710f
+      internalID: 601571023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_29
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1223
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e889fec8df22a2342bf67fdb6c6ab9d5
+      internalID: -1549219297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_30
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1220
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd0de8db49197c47aa5625a5cf56588
+      internalID: -1605122336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_31
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1191
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6384c096223276947946ff80e95eac7f
+      internalID: 2109047329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_32
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1190
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8666477cfe6dd0247a84b23a52f23b0c
+      internalID: -845644151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_33
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1186
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6f13fa6baf01a4d9d02dffb7e3cc14
+      internalID: -22417377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_34
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1187
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f34ed8727c95e4592eab36a3e74c32
+      internalID: -852739209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_35
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1155
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d33359d5ec0d574a8a173500b6c6c7f
+      internalID: -226321595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_36
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1160
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd295e0663b71a843bc76aed307f8699
+      internalID: 1683078765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_37
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1155
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96e2f16d19463343a0388eae071da35
+      internalID: 597239086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_38
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1131
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435b3b7fdd13c9c46aa792106c2bafcf
+      internalID: 380179297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_39
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1131
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec918296e61d654fb346316d9398d78
+      internalID: -105394594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_40
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1125
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a14c06694bf3234eba7042411686347
+      internalID: -875280954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_41
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1096
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20ba00f0cfb13545a57edc7b0bd4563
+      internalID: -1360582287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_42
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1095
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606374217451adc46b4752bdf4571833
+      internalID: 562805672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_43
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1093
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f9df12f3282394a9b07a3872fcd3d6
+      internalID: 1951336353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_44
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 1092
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f04b2476c9960e4cab6ce95ef41d3b3
+      internalID: -848537446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_45
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1092
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0acd4f5700e824d4a93d85b55120427a
+      internalID: 46095335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_46
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 1089
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9df5356743cadc44843986b5d2b0b3a
+      internalID: -853294699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_47
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1095
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff5e21848fea944fa008798edd4429f
+      internalID: 971191481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_48
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1063
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4314d9689026834db0a84489ed68ec2
+      internalID: -1908886180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_49
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1060
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad83841cd1f334a48a203eb9e18d4ae8
+      internalID: -1539713423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_50
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1060
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1a3ce8b20ef68498de9343bb7e0daf
+      internalID: -1084004445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_51
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1059
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e931c94225e9d479d192bbb6ee869b
+      internalID: -200048556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_52
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1057
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05af4caee604bf4a8577a8984f672aa
+      internalID: 1114763029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_53
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1057
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e1efa0f7f5617548a027ef71186d64c
+      internalID: -2089294731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_54
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1057
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95761dbad3b9ac4bbc8939be67530ae
+      internalID: -1385516836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_55
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1031
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44d2719c9a4fa7d4bbd8a123397ec54e
+      internalID: 347258761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_56
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1031
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7cff313d2ba443479780fa3ee5ef1d1
+      internalID: -310247879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_57
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1027
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54ae924a97c4b44cab872081d162b0d
+      internalID: -1887546587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_58
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1026
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e4741fb13d7604ea3ef0102fe3a088
+      internalID: -1655321420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_59
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1028
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc066dfd3c8a6904b8f0a21f8ed2065f
+      internalID: 1910668455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_60
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1000
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f414e5cfd3ab947b1e7c79785b88ae
+      internalID: 1729262942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_61
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 997
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074113532431a5a4a8f99b843a30a217
+      internalID: 242580579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_62
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 995
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607bbdea8c4f55245adcdd364abff036
+      internalID: -244571061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_63
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 994
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6af05e6b358ed944b9f0f3c2e786298
+      internalID: -1973785185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_64
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 997
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d74ce3e480d99448b1093e3a18fb3f
+      internalID: 145293474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_65
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1001
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a905be9c5b7b9e4c981f3759964c951
+      internalID: -523075961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_66
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 999
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0346067fba3bf184eb0cc690d9d2479b
+      internalID: -913853776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_67
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 967
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e4c338ae8145f4780df49305e58eb0
+      internalID: -928240274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_68
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 965
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3097e8b6efc1ab24cb3c3115e8e13fe7
+      internalID: -1045190549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_69
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 963
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa74361d424d0b648a7347207ff1d06b
+      internalID: 282644441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_70
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 967
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fab73df6f109c48826b5be16a75ed6
+      internalID: -1053014316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_71
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 964
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd793af486c92124d8e1780299567231
+      internalID: -1799408452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_72
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 935
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e7576c2b4cce64191dd70efe96daa3
+      internalID: 424002621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_73
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 934
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 070f09c16495cff44acf4c4decc9702c
+      internalID: 2034149340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_74
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 930
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d6ef8a63556ea46809762f66f9159c
+      internalID: -1586694046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_75
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 931
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7beee389342e9c84387380b5be3a12c4
+      internalID: -473405436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_76
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 899
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32bcf5f2a24d1ec48b93ad0de9f9b8d6
+      internalID: -1624368413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_77
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 904
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80637ededc0e48e4886366646f293971
+      internalID: -1160913117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_78
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 899
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9671b2a3c79bb1245ae64a753af094e8
+      internalID: -1968485549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_79
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 875
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31667d3167f24494d8a66b78399d8849
+      internalID: 524692115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_80
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 875
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436dfdc70e01b5b47a5deebdfc600396
+      internalID: 1766776824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_81
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 869
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d364ee8e8ad8414592fe21269ec6729
+      internalID: 597003645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_82
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 840
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9945503d9fc294dbb5d6c3939bd672
+      internalID: 1079180433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_83
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 839
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a8513693f045849acf8ad465d842e9
+      internalID: 438761132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_84
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 837
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b347557e6254b2144b5cc97d3e586480
+      internalID: 1454977694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_85
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 836
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b650a79f74851c540a868bb691eaf506
+      internalID: -188664303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_86
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 836
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bccbeedf60df094592ec8a94ced983c
+      internalID: 1428725378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_87
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 833
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d044fb878a55f64c9974b13a6bce000
+      internalID: -712699740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_88
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 839
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb8c6220639a154db374204b205bf9b
+      internalID: -1953141379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_89
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 807
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ede0a9153fa950944ad6c0c1c639e447
+      internalID: -1027256579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_90
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 804
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727413535ced60645936fcde84e5c001
+      internalID: -1932412577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_91
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 804
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6156f37f107fd0745af2c576c600555b
+      internalID: -1756276398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_92
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 803
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07fee885fe6a98a48b60dfaccba65b37
+      internalID: 261717459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_93
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 801
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e3cffc069ac5b4f8699863ffe5d9a7
+      internalID: -1664596335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_94
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 801
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b7ecf0d101afe45b608bedd174909a
+      internalID: -1576808242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_95
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 801
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7264931df830f8041abfcc436a86e062
+      internalID: 2104401191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_96
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 775
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e12e0fb40c50d44bf050c1ab72590a
+      internalID: 1717473553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_97
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 775
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70a1dc790c6ede40a856d0eb9dc3ecb
+      internalID: -660042595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_98
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 771
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21a74e7b6ba74344b007ea78ce71dea
+      internalID: 238068478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_99
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 770
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c086b8eaccfefd4d9931099f7cf2b62
+      internalID: 702056561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_100
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 772
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8cc16c780dc2344b41432ff9cbcb5f
+      internalID: -369018032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_101
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 744
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b34bcaa6982c846b35637408fbcad8
+      internalID: -404499779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_102
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 741
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14419bf5b7bfa7489f2e8305247e439
+      internalID: -1831955226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_103
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 739
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e1678cbf777654b91cb02b0d00093e
+      internalID: 634234717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_104
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 738
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a39af5ba13b8f24296a97285b47073f
+      internalID: 1694615066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_105
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 741
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 239b9b5b15ec16c4ba125e9c69f42a04
+      internalID: -1038206670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_106
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 745
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f9984ac464b1f14891f062ddf2d2dec
+      internalID: 911152264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_107
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 743
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c7281816ce7e140add99c58c872919
+      internalID: 2131120370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_108
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 711
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a88f3ad2bbd48043b88452d6c917202
+      internalID: -1755741121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_109
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 709
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e7c938fd24c35428e0916a533ac1ac
+      internalID: 781295227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_110
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 707
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf4e52fa933d1f49b3e2fb283bcf621
+      internalID: -1433308751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_111
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 711
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbaed46759118e14e89b2f8b6e212a1c
+      internalID: 285505961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_112
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 708
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37dca6a895ad974da8e9acd501b2d6a
+      internalID: 1140922523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_113
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 679
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e72f2d13a21fb4988303198f21a9f5
+      internalID: 1060281329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_114
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 678
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c6065860fba114b84e3f0a7c8b166d
+      internalID: -31659911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_115
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 674
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5ce88b072b545409f58fc84ba7d1a1
+      internalID: 1046590937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_116
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 675
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570c4868a10778c40b5f97835c3d0af5
+      internalID: -1033348714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_117
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 643
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1892a6e0b510fc4419fcb6d99cfdcc97
+      internalID: -38864694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_118
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 648
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32127f6191809774e9907ea814ebe964
+      internalID: -77839559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_119
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 643
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b35503e10d98be4097d18f57d143383
+      internalID: -1969156637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_120
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 619
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7124a131eaa179b49b8bc196a2d926c4
+      internalID: 1168208178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_121
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 619
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50bd07e30af98c940b1c8c5681dc7615
+      internalID: -1650883167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_122
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 613
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a298be6dab88384e8d909a3c82757b3
+      internalID: -1755278631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_123
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 584
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49874263ae9bb0e4ba2f5dbb51d7cd1f
+      internalID: -871880820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_124
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 583
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7dd25cd04ca5cd46b4d83e4d657e5d5
+      internalID: 412614330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_125
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 581
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7db9ba867232f04b86be0ed792e1112
+      internalID: 1691789192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_126
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 580
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396273dfc981d8a438b14b4531c6700e
+      internalID: 591075439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_127
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 580
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b99faa3651ae5949bb5fc0b5cb4caba
+      internalID: 978246022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_128
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 577
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310420316b94d8845baaef9f1c799db3
+      internalID: -763603367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_129
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 583
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d26d37f02fdbcf8419d58d9c015353c7
+      internalID: -895793146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_130
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 551
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e607a098e082fb4e9100aeaf3845f65
+      internalID: 1872020827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_131
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 548
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 461a035879e701541b6a9234349f72e5
+      internalID: 1384854237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_132
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 548
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 412d3f0b23ebe254c8b3371f5165fd58
+      internalID: -2000734049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_133
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 547
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4950b18f8b5f644580cfdb9a37278d5
+      internalID: -122494010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_134
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 545
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcfa9b11668ab0d4cab6e0eac4ab8eb1
+      internalID: -1958102929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_135
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 545
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7228284966dcbd4091771c3fd247a19
+      internalID: -1809003991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_136
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 545
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3208a6b572c66449ac4df16bc82134c
+      internalID: -1627500006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_137
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 519
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf4f1cd1e802f94aa37f2ae2bbac666
+      internalID: 1810379637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_138
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 519
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213493ba749f9c94e9829b964cf93d69
+      internalID: -1617802321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_139
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 515
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef1c0d899d49dc4ab3e9235f79a840e
+      internalID: -1154999160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_140
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 514
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0397c73416649f64888e602cb78f3d61
+      internalID: 1891900714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_141
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 516
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4355975713f0b26459667396bcfb1a1e
+      internalID: 50287743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_142
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 488
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f91953c0a873fd468859fd82144fc5e
+      internalID: -1075491103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_143
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 485
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 648ca2f7e977e1c428dcb1df57d72be8
+      internalID: -1366993825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_144
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 483
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32bcf0addb70c4043931389afbb0516b
+      internalID: -720346478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_145
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 482
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e301d8f6a97434ab9aa0b23852efd0
+      internalID: -127606993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_146
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 485
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691af49fe7b8e154e80d5e3279cea9bf
+      internalID: 1033798273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_147
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 489
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6729932ac0d6f2458e9fcc09c84084a
+      internalID: -1171577763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_148
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 487
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17881fcbfe38ace4894d43e75bdeb5d3
+      internalID: -1466291393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_149
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 455
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6050e0135a77c04c94d87b6c2ed4a0b
+      internalID: 2027470076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_150
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 453
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cf5d4d3315bf4429320b0dd1b56416
+      internalID: -355487517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_151
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 451
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c6518351c71294ea18c345a0dcdd7f
+      internalID: -881174738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_152
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 455
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9500c2bcafde74b8329819ae4d5e23
+      internalID: 150525674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_153
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 452
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8290c1dd6b51f4092c4811593851d2
+      internalID: 1516166527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_154
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 423
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce7f8a102f3e3542bb996d403416fd0
+      internalID: -1694653532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_155
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 422
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4202a4b53945547429f4a213a2661ca3
+      internalID: 1700298847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_156
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 418
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363c6fa4d7df08649b1b7c496c036e75
+      internalID: 593242825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_157
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 419
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238837f96bf31f9419656164f66cc0c6
+      internalID: -1037980138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_158
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 387
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293b5b30b9db5da44af69e1365b645dc
+      internalID: 466835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_159
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 392
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0ce61e3c76deb146a1ddb786bd88c21
+      internalID: -273976003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_160
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 387
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b4880b4bb4808428e4a4605a1f0950
+      internalID: -1305125192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_161
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 363
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc9bb6cb6c6ce8468d88e74a42f2d40
+      internalID: 1045273815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_162
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 363
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5109b9a2dc79b6241bf283264a5f9a6b
+      internalID: -301060259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_163
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 357
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22f5585c6b740544aa3f8dcdff36e13
+      internalID: 1163122391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_164
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 329
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7209392fe773ad14897f34502adbaa2e
+      internalID: 1113979559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_165
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 331
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020fa8f352cf91843aa03677b4aa69e3
+      internalID: -624267983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_166
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 324
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b715a81ebc3d946a413a9637dd8456
+      internalID: 1079817417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_167
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 330
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8914cd0cb1db8584e81d2bc488d11d23
+      internalID: 289140925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_168
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 328
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35347b57a30f2db4b969b815cb1cecc7
+      internalID: 257262902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_169
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 326
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5324e9970aedacb49a33d142d4c76426
+      internalID: -515799895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_170
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 332
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e1a7c889f5ac14c85de10b759faad3
+      internalID: 1939277268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_171
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 331
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae413c4e805ada74cbefdcf9abff6cee
+      internalID: -1075129476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_172
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 329
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c60ac3fc0a2be64695eb66e43da4a59
+      internalID: 361881131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_173
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 331
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ddab679efd6554cb0f4ebb8699e568
+      internalID: 986617386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_174
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 324
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c141f6bd0eb9c1345911c616e801cae7
+      internalID: 206029051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_175
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 330
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8db43cd8dbe8994a86079cb2a50894e
+      internalID: 742813210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_176
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 328
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991f78726de04274687c3e82dff57206
+      internalID: -1664319296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_177
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 326
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36393959ad352fe4f86a20e6ee0a9f26
+      internalID: -1439557680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_178
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 332
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61aceb15e823414391eb6bccbd8e4ff
+      internalID: -1887966060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_179
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 331
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a68f92f9ad23847812381766934fc5
+      internalID: -1855953555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_180
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 300
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef98c62728c1e04fa08149854248edd
+      internalID: 711179934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_181
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 300
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ade847ef8356474b8bdef363f65ae0a
+      internalID: 2142776823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_182
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 297
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7632b87177ddd647a437986d69dd31f
+      internalID: 1608360523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_183
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 295
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6bade461bf29bb41a8bdaff3120d79b
+      internalID: -1693986762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_184
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 300
+        width: 27
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629d6ef6752d71549bea621e765f7603
+      internalID: -667027765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_185
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 263
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94bbecd81b99b134dbec3323523569ff
+      internalID: 1463477200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_186
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 260
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a278b4126eede4b4695b773c1e3981ae
+      internalID: 138883099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_187
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 260
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0fc7f1ef0f536047ac97312f4933598
+      internalID: 1039302165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_188
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 260
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed10d1a0028fef4cbda8dba1197d61e
+      internalID: -2106268136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_189
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 262
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a39f1de740161d468c380c32defe067
+      internalID: 269292691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_190
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 264
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38260aebbd7faf4d9bb646a0b8680dd
+      internalID: 1536045157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_191
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 257
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57153b3040dda24b8b2ca1b2bb1a3e7
+      internalID: 1297147210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_192
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 230
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ee206f1b598e5458d0f67e9995be7f
+      internalID: -1932728498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_193
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 230
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4c228b30d808b428658cbb8717d8cb
+      internalID: -1964006842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_194
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 227
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba9767b9ae747a46bfd8cc26aa86462
+      internalID: 190757740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_195
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 225
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832708b6e6eb2e04b8e51416e5056931
+      internalID: -1328140561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_196
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 228
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bfa2035d0b827c49b9c0a93b8b4cfd6
+      internalID: -1591473571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_197
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 229
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6c17d03469f6a47bea83f4368fc9c6
+      internalID: -99262007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_198
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 207
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac09dca9d624524e827ab4b7aa49879
+      internalID: -729823024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_199
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 207
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541a2606c5dc4cf4d92fca0f347b5d20
+      internalID: 1391051287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_200
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 207
+        width: 25
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b683fca1a8afad447ba326787458bc7b
+      internalID: -1231122855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_201
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 207
+        width: 23
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b54a1583287c294481fdec736f64f0f
+      internalID: -212525776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_202
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 200
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb5e9453f8517b48a3621d9090d77fa
+      internalID: -490961302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_203
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 199
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8d95e619d003f468077f732f0b7a06
+      internalID: 498621929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_204
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 199
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1383ed28e1dce4daaeb0d258506d13
+      internalID: 1278128065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_205
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 196
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7533f86077c9cf5439f65150078de067
+      internalID: -1924466301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_206
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 168
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ecdf73c7461a04995443d5277af6d0
+      internalID: 223926287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_207
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 166
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb882d97c9c453840a99ced224b8c9a0
+      internalID: -1774598926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_208
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 168
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a87a1332fbecba549b4ac77983bd1310
+      internalID: -1469104360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_209
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 166
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83aca5661fa579e49971621798237cb9
+      internalID: -1102054891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_210
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 169
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d318a9e252ba6846a2929f8b04f788b
+      internalID: -491137428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_211
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 166
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa7088c2cf714349bb348b2ef5ad01d
+      internalID: -598480507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_212
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 166
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cdc653220805344eaa98e8a97bfc368
+      internalID: 84736790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_213
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 165
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9643e17718d6b24fb325ae6dd19ed10
+      internalID: -1007105464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_214
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 133
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f0da5c18f5e6f46b3e82e1685068ae
+      internalID: -343665350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_215
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 134
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9627d2ff8eefcdc44a5c4e9678c36420
+      internalID: -344016098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_216
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 138
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9166a9fc05bc1264180450de59ee665f
+      internalID: -1856946235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_217
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 134
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b955a229555354eb537e146842adab
+      internalID: 138209872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_218
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 134
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5729b0fbceb2b3246a8e7b0b3ccf98e6
+      internalID: -1077235696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_219
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 133
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f22051f86236849a3c78cfb2626be0
+      internalID: -1528044558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_220
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 133
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857c39e969f59984586f8722f7345914
+      internalID: -1469943416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_221
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 135
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad9b02f2e06c424f8321b85cae6a6f1
+      internalID: -1599192272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_222
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 103
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca61a39c84fdd604d9de432859130555
+      internalID: -1039205456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_223
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 104
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5056b6aae3262e84fa792fe5f1e633a7
+      internalID: 1087801651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_224
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 98
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b9880e31e056548877e03f433825e5
+      internalID: -2007654519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_225
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 98
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab961c4a4d2f89546b5bec55d4d8f3ef
+      internalID: -64835915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_226
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 101
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cebf34a3a0c7947a1db9dcfc2d0def
+      internalID: -454337801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_227
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 71
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e50b2d1b163444faedf878e5ff2656
+      internalID: 1809133176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_228
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 72
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53baf74cf76143e4ba1115b3d6f73657
+      internalID: 2023286100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_229
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 66
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b10e498a0b6e9469b5b0743e9edfd5
+      internalID: -1551343206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_230
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 66
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40fb513f426fbcc4e8230b794b178058
+      internalID: 1782011762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_231
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 69
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1e3a251fa196a4f99c2348865ce4dc
+      internalID: -288810189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_232
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 39
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc933e912f0b1b48988607b9fc6c966
+      internalID: 1481969219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_233
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 40
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e44adb85c2293438233e58162522eb
+      internalID: 1631560544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_234
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 34
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8853f25a713d7cc45a199dcb90bb0278
+      internalID: -1812990249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_235
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 34
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9add2998fac85e46b2c322c5ad4229a
+      internalID: 529488730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_236
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 37
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30c1850220a3ea4491c762157d3d51b
+      internalID: -5951915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_237
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 7
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1767500277e6da449ae1ab050dff1fab
+      internalID: 1732755263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_238
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 8
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516810d0a4a72ad429bee2e06e14866c
+      internalID: 1522491855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_239
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 2
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844ee192a5dba2949885956a2070312e
+      internalID: 681060453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_240
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 2
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb374ef3b2392eb4fa3faa93e17b4e80
+      internalID: 1259299162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: items-palette-swaps_241
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 5
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d7c20cef239314dbaefb55d0afd38c
+      internalID: -1427868391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      items-palette-swaps_0: -183415849
+      items-palette-swaps_1: -1940286298
+      items-palette-swaps_10: 352014557
+      items-palette-swaps_100: -369018032
+      items-palette-swaps_101: -404499779
+      items-palette-swaps_102: -1831955226
+      items-palette-swaps_103: 634234717
+      items-palette-swaps_104: 1694615066
+      items-palette-swaps_105: -1038206670
+      items-palette-swaps_106: 911152264
+      items-palette-swaps_107: 2131120370
+      items-palette-swaps_108: -1755741121
+      items-palette-swaps_109: 781295227
+      items-palette-swaps_11: -1840816103
+      items-palette-swaps_110: -1433308751
+      items-palette-swaps_111: 285505961
+      items-palette-swaps_112: 1140922523
+      items-palette-swaps_113: 1060281329
+      items-palette-swaps_114: -31659911
+      items-palette-swaps_115: 1046590937
+      items-palette-swaps_116: -1033348714
+      items-palette-swaps_117: -38864694
+      items-palette-swaps_118: -77839559
+      items-palette-swaps_119: -1969156637
+      items-palette-swaps_12: 682725932
+      items-palette-swaps_120: 1168208178
+      items-palette-swaps_121: -1650883167
+      items-palette-swaps_122: -1755278631
+      items-palette-swaps_123: -871880820
+      items-palette-swaps_124: 412614330
+      items-palette-swaps_125: 1691789192
+      items-palette-swaps_126: 591075439
+      items-palette-swaps_127: 978246022
+      items-palette-swaps_128: -763603367
+      items-palette-swaps_129: -895793146
+      items-palette-swaps_13: -1070325621
+      items-palette-swaps_130: 1872020827
+      items-palette-swaps_131: 1384854237
+      items-palette-swaps_132: -2000734049
+      items-palette-swaps_133: -122494010
+      items-palette-swaps_134: -1958102929
+      items-palette-swaps_135: -1809003991
+      items-palette-swaps_136: -1627500006
+      items-palette-swaps_137: 1810379637
+      items-palette-swaps_138: -1617802321
+      items-palette-swaps_139: -1154999160
+      items-palette-swaps_14: -51895748
+      items-palette-swaps_140: 1891900714
+      items-palette-swaps_141: 50287743
+      items-palette-swaps_142: -1075491103
+      items-palette-swaps_143: -1366993825
+      items-palette-swaps_144: -720346478
+      items-palette-swaps_145: -127606993
+      items-palette-swaps_146: 1033798273
+      items-palette-swaps_147: -1171577763
+      items-palette-swaps_148: -1466291393
+      items-palette-swaps_149: 2027470076
+      items-palette-swaps_15: 830721225
+      items-palette-swaps_150: -355487517
+      items-palette-swaps_151: -881174738
+      items-palette-swaps_152: 150525674
+      items-palette-swaps_153: 1516166527
+      items-palette-swaps_154: -1694653532
+      items-palette-swaps_155: 1700298847
+      items-palette-swaps_156: 593242825
+      items-palette-swaps_157: -1037980138
+      items-palette-swaps_158: 466835
+      items-palette-swaps_159: -273976003
+      items-palette-swaps_16: -715471111
+      items-palette-swaps_160: -1305125192
+      items-palette-swaps_161: 1045273815
+      items-palette-swaps_162: -301060259
+      items-palette-swaps_163: 1163122391
+      items-palette-swaps_164: 1113979559
+      items-palette-swaps_165: -624267983
+      items-palette-swaps_166: 1079817417
+      items-palette-swaps_167: 289140925
+      items-palette-swaps_168: 257262902
+      items-palette-swaps_169: -515799895
+      items-palette-swaps_17: 1126631831
+      items-palette-swaps_170: 1939277268
+      items-palette-swaps_171: -1075129476
+      items-palette-swaps_172: 361881131
+      items-palette-swaps_173: 986617386
+      items-palette-swaps_174: 206029051
+      items-palette-swaps_175: 742813210
+      items-palette-swaps_176: -1664319296
+      items-palette-swaps_177: -1439557680
+      items-palette-swaps_178: -1887966060
+      items-palette-swaps_179: -1855953555
+      items-palette-swaps_18: 677115811
+      items-palette-swaps_180: 711179934
+      items-palette-swaps_181: 2142776823
+      items-palette-swaps_182: 1608360523
+      items-palette-swaps_183: -1693986762
+      items-palette-swaps_184: -667027765
+      items-palette-swaps_185: 1463477200
+      items-palette-swaps_186: 138883099
+      items-palette-swaps_187: 1039302165
+      items-palette-swaps_188: -2106268136
+      items-palette-swaps_189: 269292691
+      items-palette-swaps_19: -1203315015
+      items-palette-swaps_190: 1536045157
+      items-palette-swaps_191: 1297147210
+      items-palette-swaps_192: -1932728498
+      items-palette-swaps_193: -1964006842
+      items-palette-swaps_194: 190757740
+      items-palette-swaps_195: -1328140561
+      items-palette-swaps_196: -1591473571
+      items-palette-swaps_197: -99262007
+      items-palette-swaps_198: -729823024
+      items-palette-swaps_199: 1391051287
+      items-palette-swaps_2: -1281843247
+      items-palette-swaps_20: -84251056
+      items-palette-swaps_200: -1231122855
+      items-palette-swaps_201: -212525776
+      items-palette-swaps_202: -490961302
+      items-palette-swaps_203: 498621929
+      items-palette-swaps_204: 1278128065
+      items-palette-swaps_205: -1924466301
+      items-palette-swaps_206: 223926287
+      items-palette-swaps_207: -1774598926
+      items-palette-swaps_208: -1469104360
+      items-palette-swaps_209: -1102054891
+      items-palette-swaps_21: 1260619182
+      items-palette-swaps_210: -491137428
+      items-palette-swaps_211: -598480507
+      items-palette-swaps_212: 84736790
+      items-palette-swaps_213: -1007105464
+      items-palette-swaps_214: -343665350
+      items-palette-swaps_215: -344016098
+      items-palette-swaps_216: -1856946235
+      items-palette-swaps_217: 138209872
+      items-palette-swaps_218: -1077235696
+      items-palette-swaps_219: -1528044558
+      items-palette-swaps_22: -218232205
+      items-palette-swaps_220: -1469943416
+      items-palette-swaps_221: -1599192272
+      items-palette-swaps_222: -1039205456
+      items-palette-swaps_223: 1087801651
+      items-palette-swaps_224: -2007654519
+      items-palette-swaps_225: -64835915
+      items-palette-swaps_226: -454337801
+      items-palette-swaps_227: 1809133176
+      items-palette-swaps_228: 2023286100
+      items-palette-swaps_229: -1551343206
+      items-palette-swaps_23: 1420998567
+      items-palette-swaps_230: 1782011762
+      items-palette-swaps_231: -288810189
+      items-palette-swaps_232: 1481969219
+      items-palette-swaps_233: 1631560544
+      items-palette-swaps_234: -1812990249
+      items-palette-swaps_235: 529488730
+      items-palette-swaps_236: -5951915
+      items-palette-swaps_237: 1732755263
+      items-palette-swaps_238: 1522491855
+      items-palette-swaps_239: 681060453
+      items-palette-swaps_24: 435856275
+      items-palette-swaps_240: 1259299162
+      items-palette-swaps_241: -1427868391
+      items-palette-swaps_25: -1226826779
+      items-palette-swaps_26: 1677556017
+      items-palette-swaps_27: -1105506247
+      items-palette-swaps_28: 601571023
+      items-palette-swaps_29: -1549219297
+      items-palette-swaps_3: 1953482697
+      items-palette-swaps_30: -1605122336
+      items-palette-swaps_31: 2109047329
+      items-palette-swaps_32: -845644151
+      items-palette-swaps_33: -22417377
+      items-palette-swaps_34: -852739209
+      items-palette-swaps_35: -226321595
+      items-palette-swaps_36: 1683078765
+      items-palette-swaps_37: 597239086
+      items-palette-swaps_38: 380179297
+      items-palette-swaps_39: -105394594
+      items-palette-swaps_4: -343632115
+      items-palette-swaps_40: -875280954
+      items-palette-swaps_41: -1360582287
+      items-palette-swaps_42: 562805672
+      items-palette-swaps_43: 1951336353
+      items-palette-swaps_44: -848537446
+      items-palette-swaps_45: 46095335
+      items-palette-swaps_46: -853294699
+      items-palette-swaps_47: 971191481
+      items-palette-swaps_48: -1908886180
+      items-palette-swaps_49: -1539713423
+      items-palette-swaps_5: 834585430
+      items-palette-swaps_50: -1084004445
+      items-palette-swaps_51: -200048556
+      items-palette-swaps_52: 1114763029
+      items-palette-swaps_53: -2089294731
+      items-palette-swaps_54: -1385516836
+      items-palette-swaps_55: 347258761
+      items-palette-swaps_56: -310247879
+      items-palette-swaps_57: -1887546587
+      items-palette-swaps_58: -1655321420
+      items-palette-swaps_59: 1910668455
+      items-palette-swaps_6: -1794098794
+      items-palette-swaps_60: 1729262942
+      items-palette-swaps_61: 242580579
+      items-palette-swaps_62: -244571061
+      items-palette-swaps_63: -1973785185
+      items-palette-swaps_64: 145293474
+      items-palette-swaps_65: -523075961
+      items-palette-swaps_66: -913853776
+      items-palette-swaps_67: -928240274
+      items-palette-swaps_68: -1045190549
+      items-palette-swaps_69: 282644441
+      items-palette-swaps_7: -1744230166
+      items-palette-swaps_70: -1053014316
+      items-palette-swaps_71: -1799408452
+      items-palette-swaps_72: 424002621
+      items-palette-swaps_73: 2034149340
+      items-palette-swaps_74: -1586694046
+      items-palette-swaps_75: -473405436
+      items-palette-swaps_76: -1624368413
+      items-palette-swaps_77: -1160913117
+      items-palette-swaps_78: -1968485549
+      items-palette-swaps_79: 524692115
+      items-palette-swaps_8: 1951417481
+      items-palette-swaps_80: 1766776824
+      items-palette-swaps_81: 597003645
+      items-palette-swaps_82: 1079180433
+      items-palette-swaps_83: 438761132
+      items-palette-swaps_84: 1454977694
+      items-palette-swaps_85: -188664303
+      items-palette-swaps_86: 1428725378
+      items-palette-swaps_87: -712699740
+      items-palette-swaps_88: -1953141379
+      items-palette-swaps_89: -1027256579
+      items-palette-swaps_9: 1497961559
+      items-palette-swaps_90: -1932412577
+      items-palette-swaps_91: -1756276398
+      items-palette-swaps_92: 261717459
+      items-palette-swaps_93: -1664596335
+      items-palette-swaps_94: -1576808242
+      items-palette-swaps_95: 2104401191
+      items-palette-swaps_96: 1717473553
+      items-palette-swaps_97: -660042595
+      items-palette-swaps_98: 238068478
+      items-palette-swaps_99: 702056561
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
