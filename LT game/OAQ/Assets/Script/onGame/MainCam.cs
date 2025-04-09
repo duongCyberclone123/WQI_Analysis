@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Threading;
 using UnityEngine.UI;
+using System;
 
 public class Stone
 {
@@ -110,10 +111,15 @@ public class MainCam : MonoBehaviour
     private Button inputField;
     private Button R;
     private Button L;
+    private Button Player1;
+    private Button Player2;
+    private Button Turn;
     private int pickID;
     private int nb_stone_pick;
     private int score1;
     private int score2;
+    private int turn;
+    private int mode; // 0: pvp, 1: pvc
 
     private TileStone[] board = new TileStone[12];
     private List<GameObject> GOblst;
@@ -125,6 +131,9 @@ public class MainCam : MonoBehaviour
         L = GameObject.Find("Canvas/L").GetComponent<Button>();
         R = GameObject.Find("Canvas/R").GetComponent<Button>();
         inputField = GameObject.Find("Canvas/nb").GetComponent<Button>();
+        Player1 = GameObject.Find("Canvas/Player1").GetComponent<Button>();
+        Player2 = GameObject.Find("Canvas/Player2").GetComponent<Button>();
+        Turn = GameObject.Find("Canvas/Turn").GetComponent<Button>();
         num = makePlayer.GetComponent<NumPlayer>().num;
         Destroy(makePlayer);
         Debug.Log(num);
@@ -139,6 +148,38 @@ public class MainCam : MonoBehaviour
         R.onClick.RemoveAllListeners();
         L.onClick.AddListener(() => StoneMove("L"));
         R.onClick.AddListener(() => StoneMove("R"));
+        System.Random random = new System.Random();
+        turn = random.Next(0, 2); // 0: Player1, 1: Player2 or Computer
+        if (num == 1) mode = 1;
+        else mode = 0;
+        if (turn == 0)
+        {
+            ColorBlock cb = Player1.colors;
+            ColorUtility.TryParseHtmlString("#D50000", out Color c);
+            cb.normalColor = c;
+            Player1.colors = cb;
+
+            ColorBlock cb2 = Player2.colors;
+            ColorUtility.TryParseHtmlString("#D6FE75", out Color d);
+            cb2.normalColor = d;
+            Player2.colors = cb2;
+
+            Turn.GetComponentInChildren<TMP_Text>().text = "Player 1";
+        }
+        else
+        {
+            ColorBlock cb = Player1.colors;
+            ColorUtility.TryParseHtmlString("#D6FE75", out Color c);
+            cb.normalColor = c;
+            Player1.colors = cb;
+
+            ColorBlock cb2 = Player2.colors;
+            ColorUtility.TryParseHtmlString("#D50000", out Color d);
+            cb2.normalColor = d;
+            Player2.colors = cb2;
+
+            Turn.GetComponentInChildren<TMP_Text>().text = ((mode == 0) ? "Player 2" : "Computer");
+        }
         GameBoard();
         InitBoard();
         renderStone();
@@ -146,6 +187,7 @@ public class MainCam : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("Get Updated");
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -158,7 +200,37 @@ public class MainCam : MonoBehaviour
                 // Kiểm tra nếu nó là 1 trong các Tile
                 if (GOblst.Contains(clicked))
                 {
-                    pickID = GOblst.IndexOf(clicked);
+                    if (turn == 1 && mode == 1) ComputerModeController();
+                    else
+                        pickID = GOblst.IndexOf(clicked);
+                    if (turn == 0)
+                    {
+                        ColorBlock cb = Player1.colors;
+                        ColorUtility.TryParseHtmlString("#D50000", out Color c);
+                        cb.normalColor = c;
+                        Player1.colors = cb;
+
+                        ColorBlock cb2 = Player2.colors;
+                        ColorUtility.TryParseHtmlString("#D6FE75", out Color d);
+                        cb2.normalColor = d;
+                        Player2.colors = cb2;
+
+                        Turn.GetComponentInChildren<TMP_Text>().text = "Player 1";
+                    }
+                    else
+                    {
+                        ColorBlock cb = Player1.colors;
+                        ColorUtility.TryParseHtmlString("#D6FE75", out Color c);
+                        cb.normalColor = c;
+                        Player1.colors = cb;
+
+                        ColorBlock cb2 = Player2.colors;
+                        ColorUtility.TryParseHtmlString("#D50000", out Color d);
+                        cb2.normalColor = d;
+                        Player2.colors = cb2;
+
+                        Turn.GetComponentInChildren<TMP_Text>().text = ((mode == 0) ? "Player 2" : "Computer");
+                    }
                     //Debug.Log($"Tile {pickID} được click!\n");
                     nb_stone_pick = board[pickID].sumOfVil();
                     //Debug.Log($"{nb_stone_pick} of vils are picked!");
@@ -187,8 +259,15 @@ public class MainCam : MonoBehaviour
         return -1; // Trả về -1 nếu không tìm thấy
     }
 
+    private void ComputerModeController()
+    {
+        System.Random random = new System.Random();
+        pickID = random.Next(0, 12);
+    }
+
     private void StoneMove(string dir)
     {
+        Debug.Log($"Move to the {dir}");
         if ((pickID >= 0 && pickID < 5) || (pickID > 5 && pickID < 11))
         {
             board[pickID].updateVil(-nb_stone_pick);
@@ -196,30 +275,39 @@ public class MainCam : MonoBehaviour
             {
                 pickID = nextPickID(pickID, dir);
                 board[pickID].updateVil(1);
+                Debug.Log($"Current place {pickID} {nb_stone_pick}");
                 nb_stone_pick--;
                 if (nb_stone_pick == 0)
                 {
-                    if (board[nextPickID(pickID, dir)].sumOfVil() > 0)
+                    if (board[nextPickID(pickID, dir)].sumOfVil() > 0 && pickID != 5 && pickID != 11)
                     {
                         pickID = nextPickID(pickID, dir);
                         nb_stone_pick = board[pickID].sumOfVil();
+                        board[pickID].updateVil(-nb_stone_pick);
                     }
                     else if (nextPickID(pickID, dir) != 5 && nextPickID(pickID, dir) != 11 
                         && board[nextPickID(pickID, dir)].sumOfVil() == 0 
                         && board[nextPickID(nextPickID(pickID,dir),dir)].totalStone() > 0)
                     {
-                        score1 += board[nextPickID(nextPickID(pickID, dir),dir)].totalStone();
+                        if (turn == 0)
+                        {
+                            score1 += board[nextPickID(nextPickID(pickID, dir), dir)].totalStone();
+                            Player1.GetComponentInChildren<TMP_Text>().text = "Player 1: " + score1.ToString();
+                        }
+                        else { 
+                            score2 += board[nextPickID(nextPickID(pickID, dir), dir)].totalStone();
+                            Player2.GetComponentInChildren<TMP_Text>().text = "Player 2: " + score2.ToString();
+                        }
                         board[nextPickID(nextPickID(pickID, dir),dir)].Clear();
                         pickID = -1;
-                        Debug.Log($"Player 1: {score1}");
                     }
                 }
-                Thread.Sleep(200);
                 renderStone();
             }
             pickID = -1;
         }
         pickID = -1;
+        turn = (turn ==1) ? 0 : 1;
         return;
     }
 
