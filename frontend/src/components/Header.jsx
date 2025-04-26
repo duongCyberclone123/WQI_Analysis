@@ -22,12 +22,13 @@ export default function Header() {
                 z-index: 1000;
             }
             .header h1 {
-                font-size: 30px;
-                margin-right: 20px;
+                font-size: 24px;
+                margin-right: 0px;
             }
             .navbar {
                 display: flex;
-                width: 100%;
+                width: 80%;
+                padding: 20px;
             }
             .navbar a {
                 color: white;
@@ -36,6 +37,7 @@ export default function Header() {
                 text-align: center;
                 flex-grow: 1;
                 font-size: 20px;
+                width: 80%;
             }
             .navbar a:hover {
                 background-color: #575757;
@@ -44,11 +46,11 @@ export default function Header() {
             `}
         </style>
         <header className="header">
-            <h1>My Application</h1>
+            <h1>WATER QUALITY RESEARCHER</h1>
             <nav className="navbar">
-                <a href="/">Home</a>
-                <a href="/login">Login</a>
+                <a href="/home">Home</a>
                 <a href="/dashboard">Dashboard</a>
+                <a href="/login">Login</a>
             </nav>
         </header>
         </>
