@@ -3,12 +3,14 @@ import AuthProvider from './components/AuthProvider';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+            <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />  
             <Route path="/home" element={<Home />} />       
