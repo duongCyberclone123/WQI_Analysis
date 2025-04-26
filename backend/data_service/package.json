@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "exceljs": "^4.4.0",
-    "os-utils": "^0.0.14",
-    "pdfkit": "^0.17.0"
-  }
-}

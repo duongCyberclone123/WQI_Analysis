@@ -1,9 +1,32 @@
-import { useEffect, useStat  } from "react";
+import { useEffect, useState  } from "react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-class Login extends React.Component {
-    render() {
+function Login() {
+        const [email, setEmail] = useState("");
+        const [password, setPassword] = useState("");
+        const navigate = useNavigate();
+        const onSubmit = async(e) => {
+            e.preventDefault();
+            const data = { email, password };
+            const response = await fetch("http://localhost:8000/user/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            const result = await response.json();
+            if (response.ok) {
+                console.log("Login successful:", result);
+                localStorage.setItem("user", JSON.stringify(result.user));
+                console.log("User data saved to localStorage:", result.user);
+                navigate("/home");
+            } else {
+                console.error("Login failed:", result.message);
+                alert(result.message);
+            }
+        }
         return (
             <>
             <style>
@@ -82,29 +105,40 @@ class Login extends React.Component {
                     
                 `}
             </style>
-            <div class="login-container">
-                <div class="login-box">
-                <h2>Đăng nhập</h2>
-                <form>
-                    <label for="username">Email/Tên đăng nhập</label>
-                    <input type="text" id="username" placeholder="Email/Tên đăng nhập" required />
+            <div className="login-container">
+                <div className="login-box">
+                    <h2>Đăng nhập</h2>
+                    <form>
+                    <label htmlFor="username">Email/Tên đăng nhập</label>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Email/Tên đăng nhập"
+                        required
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
 
-                    <label for="password">Mật khẩu</label>
-                    <input type="password" id="password" placeholder="Mật khẩu" required />
+                    <label htmlFor="password">Mật khẩu</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Mật khẩu"
+                        required
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
 
-                    <div class="checkbox-remember">
-                    <input type="checkbox" id="remember" />
-                    <label for="remember">Lưu tài khoản</label>
+                    <div className="checkbox-remember">
+                        <input type="checkbox" id="remember" />
+                        <label htmlFor="remember">Lưu tài khoản</label>
                     </div>
 
-                    <button type="submit">Đăng nhập</button>
-                    <a href="#" class="forgot-password">Quên mật khẩu?</a>
-                </form>
+                    <button type="submit" onClick={(e)=>onSubmit(e)}>Đăng nhập</button>
+                    <a href="#" className="forgot-password">Quên mật khẩu?</a>
+                    </form>
                 </div>
-            </div>
+                </div>
             </> 
         );
-    }
 }
 
 export default Login;
