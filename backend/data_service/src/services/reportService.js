@@ -1,17 +1,17 @@
-const { Op } = require('sequelize');
-const Observation = require('../models/Observation');
-const generateExcelReport = require('../utils/excelGenerator');
-const generatePdfReport = require('../utils/pdfGenerator');
+const { Op } = require("sequelize");
+const Observation = require("../models/Observation");
+const generateExcelReport = require("../utils/excelGenerator");
+const generatePdfReport = require("../utils/pdfGenerator");
 
 // Lấy dữ liệu báo cáo từ bảng observation
 const generateReportData = async (startDate, endDate, location) => {
   return await Observation.findAll({
     where: {
       date: {
-        [Op.between]: [startDate, endDate]
+        [Op.between]: [startDate, endDate],
       },
-      opid: location // Điều chỉnh nếu location cần ánh xạ tới observation_place
-    }
+      opid: location, // Điều chỉnh nếu location cần ánh xạ tới observation_place
+    },
   });
 };
 
