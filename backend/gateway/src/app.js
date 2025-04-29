@@ -14,6 +14,10 @@ app.use("/api", adminProxy);
 const chatbotRoutes = require("./routes/chatbot");
 app.use("/api/chatbot", chatbotRoutes);
 
+
+const aiRoutes = require('./routes/aiRoutes');
+app.use('/api/ai', aiRoutes);
+
 const reportRoutes = require("./routes/reportRoutes");
 app.use("/api/report", reportRoutes);
 app.use(bodyParser.json());
