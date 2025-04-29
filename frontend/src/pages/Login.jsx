@@ -2,6 +2,24 @@ import { useEffect, useState  } from "react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+function decodeJwtPayload(token) {
+    // Tách token thành 3 phần
+    const parts = token.split('.');
+    if (parts.length !== 3) {
+        throw new Error('Invalid JWT token');
+    }
+
+    const payload = parts[1];
+
+    // Thêm padding nếu thiếu
+    const base64 = payload.replace(/-/g, '+').replace(/_/g, '/');
+    const padded = base64.padEnd(base64.length + (4 - base64.length % 4) % 4, '=');
+
+    // Decode base64 -> JSON string -> Object
+    const decoded = atob(padded);
+    return JSON.parse(decoded);
+}
+
 function Login() {
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
@@ -9,7 +27,7 @@ function Login() {
         const onSubmit = async(e) => {
             e.preventDefault();
             const data = { email, password };
-            const response = await fetch("http://localhost:8000/user/login", {
+            const response = await fetch("http://localhost:8000/auth/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -19,9 +37,15 @@ function Login() {
             const result = await response.json();
             if (response.ok) {
                 console.log("Login successful:", result);
-                localStorage.setItem("user", JSON.stringify(result.user));
-                console.log("User data saved to localStorage:", result.user);
-                navigate("/home");
+                const user = decodeJwtPayload(result.token);
+                console.log("Decoded user data:", user);
+                localStorage.setItem("user", JSON.stringify(user));
+                console.log("User data saved to localStorage:", user);
+                if (user.role === "admin") {
+                    navigate("/admin");
+                } else if (user.role === "user") {
+                    navigate("/home");
+                }
             } else {
                 console.error("Login failed:", result.message);
                 alert(result.message);
@@ -102,7 +126,18 @@ function Login() {
                         color: black;
                         text-decoration: none;
                     }
-                    
+                    .reg{
+                        margin-top: 10px;
+                        text-align: center;
+                        font-size: 0.9em;
+                        color: black;
+                        text-decoration: none;
+                    }
+                    .reg a{
+                        margin-top: 10px;
+                        color: black;
+                        font-weight: bold;
+                    }
                 `}
             </style>
             <div className="login-container">
@@ -126,15 +161,10 @@ function Login() {
                         required
                         onChange={(e) => setPassword(e.target.value)}
                     />
-
-                    <div className="checkbox-remember">
-                        <input type="checkbox" id="remember" />
-                        <label htmlFor="remember">Lưu tài khoản</label>
-                    </div>
-
                     <button type="submit" onClick={(e)=>onSubmit(e)}>Đăng nhập</button>
                     <a href="#" className="forgot-password">Quên mật khẩu?</a>
                     </form>
+                    <div className="reg">Bạn chưa có tài khoản? <a href="/register">Đăng ký</a></div>
                 </div>
                 </div>
             </> 

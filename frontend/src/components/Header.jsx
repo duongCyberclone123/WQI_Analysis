@@ -39,7 +39,6 @@ export default function Header() {
                 text-align: center;
                 flex-grow: 1;
                 font-size: 20px;
-                width: 80%;
             }
             .navbar a:hover {
                 background-color: #575757;
@@ -52,6 +51,8 @@ export default function Header() {
             <nav className="navbar">
                 <a href="/home">Home</a>
                 <a href="/dashboard">Dashboard</a>
+                <a href="/model">AI Model</a>
+                <a href="/report">Report</a>
                 <a href="/login">Login</a>
             </nav>
         </header>

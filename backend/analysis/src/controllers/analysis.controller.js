@@ -1,0 +1,66 @@
+const AnalysisService = require('../service/analysis.service');
+
+class AnalysisController {
+
+    async nb_of_observation_points(req, res) {
+        try {
+        const result = await AnalysisService.nb_of_observation_points();
+        res.status(200).json({ nb_of_observation_points: result[0].length});
+        } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+        }
+    }
+
+    async nb_of_observations(req, res) {
+        try {
+        const result = await AnalysisService.nb_of_observations();
+        res.status(200).json({ nb_of_observations: result[0][0].count });
+        } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+        }
+    }
+
+    async valid_quality(req, res) {
+        try {
+        const result = await AnalysisService.valid_quality();
+        res.status(200).json({ valid_quality: result });
+        } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+        }
+    }
+
+    async water_quality(req, res) {
+        try {
+        const result = await AnalysisService.water_quality();
+        res.status(200).json({ water_quality: result });
+        } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+        }
+    }
+
+    async Place_data(req, res) {
+        try {
+        const result = await AnalysisService.Place_data();
+        res.status(200).json({ provinces: result.provinces, districts: result.districts, ob_places: result.ob_places });
+        } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+        }
+    }  
+
+    async getObservationAt(req, res) {
+        try {
+            const result = await AnalysisService.getObservationAt(req.query.province, req.query.district, req.query.ob_place);
+            res.status(200).json({ observation: result });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ error: 'Internal server error' });
+        }
+    }
+}
+
+module.exports = new AnalysisController();
