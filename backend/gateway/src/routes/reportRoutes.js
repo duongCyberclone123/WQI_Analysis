@@ -10,7 +10,7 @@ router.post('/generate-pdf', auth(['user', 'admin']), async (req, res) => {
 
   try {
     const response = await axios.post(
-      'http://data-service:3000/generate-pdf',
+      'http://localhost:3002/generate-pdf',
       { startDate, endDate, location }
     );
     res.send(response.data);
@@ -25,7 +25,7 @@ router.post('/generate-excel', auth(['user', 'admin']), async (req, res) => {
 
   try {
     const response = await axios.post(
-      'http://data-service:3000/generate-excel',
+      'http://localhost:3002/generate-excel',
       { startDate, endDate, location }
     );
     res.send(response.data);

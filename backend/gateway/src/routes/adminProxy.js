@@ -4,22 +4,22 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 // Proxy tới data-service
 router.use('/admin', createProxyMiddleware({
-  target: 'http://data-service:3002',
+  target: 'http://localhost:3002',
   changeOrigin: true
 }));
 
 router.use('/devices', createProxyMiddleware({
-    target: 'http://data-service:3001',
+    target: 'http://localhost:3002',
     changeOrigin: true
 }));
 
 router.use('/monitor', createProxyMiddleware({
-    target: 'http://data-service:3001',
+    target: 'http://localhost:3002',
     changeOrigin: true
 }));
 
 router.use('/alerts', createProxyMiddleware({
-    target: 'http://data-service:3001',
+    target: 'http://localhost:3002',
     changeOrigin: true
 }));
 

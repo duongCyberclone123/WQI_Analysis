@@ -23,8 +23,15 @@ exports.register = async (req, res) => {
     const hashed = await bcrypt.hash(password, 10);
     await pool.query("INSERT INTO users (email, password, verified) VALUES (?, ?, ?)", [email, hashed, false]);
 
-    const code = Math.floor(100000 + Math.random() * 900000);
-    verificationCodes[email] = code;
+    const code = Math.floor(100000 + Math.random() * 900000).toString();
+    const expiresAt = new Date(Date.now() + 15 * 60 * 1000);
+
+    await pool.query(
+      `INSERT INTO verification_codes
+         (email, code, created_at, expires_at)
+       VALUES (?, ?, NOW(), ?)`,
+      [email, code, expiresAt]
+    );
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
@@ -62,6 +69,14 @@ exports.login = async (req, res) => {
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) return res.status(400).json({ message: "Sai mật khẩu" });
 
-  const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET);
+  const token = jwt.sign(
+    {
+      id: user.id,
+      email: user.email,
+      role: user.role
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: '1h' }
+  );
   res.json({ token });
 };
