@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import LandingPage from './pages/LandingPage';
 import Register from './pages/Register';
 import Verification from './pages/Verification';
+import Report from './pages/Report';
 
 // Admin imports
 import AdminHome from './admin/AdminHome';
@@ -21,6 +22,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />  
             <Route path="/home" element={<Home />} /> 
+            <Route path="/report" element={<Report />} /> 
+            {/* Admin routes */}
             <Route path="/admin" element={<AdminHome />} /> 
             {/* Add more routes as needed */}      
         </Routes>

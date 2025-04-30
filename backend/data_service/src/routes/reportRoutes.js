@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../middlewares/auth');
 const { generatePdfReportService, generateExcelReportService } = require('../services/reportService');
 
 // Chỉ người dùng đã đăng nhập mới có thể xuất báo cáo
-router.post('/generate-pdf', auth(['user', 'admin']), async (req, res) => {
+router.post('/generate-pdf', async (req, res) => {
   const { startDate, endDate, location } = req.body;
 
   try {
@@ -15,7 +14,7 @@ router.post('/generate-pdf', auth(['user', 'admin']), async (req, res) => {
   }
 });
 
-router.post('/generate-excel', auth(['user', 'admin']), async (req, res) => {
+router.post('/generate-excel', async (req, res) => {
   const { startDate, endDate, location } = req.body;
 
   try {

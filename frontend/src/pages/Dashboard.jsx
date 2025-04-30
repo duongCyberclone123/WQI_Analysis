@@ -184,7 +184,7 @@ function Dashboard() {
             fetchWqiData();
         },[province, district, Ob_point]);
 
-        return (wqiData && wqiData.length!=0  ? (
+        return (1  ? (
             <>
             <style>{`
                 .dashboard-container {
@@ -347,14 +347,18 @@ function Dashboard() {
                             </div>
                         </div>
                         <div className="chart" style={{ marginTop: "20px", width: "100%", display: "flex", alignItems: "center",justifyContent:"center", flexWrap:"wrap", gap: "40px" }}>
-                            <div>
-                                <h2 style={{ textAlign: "center" }}>Thống kê chất lượng mẫu nước</h2>
-                                <DonutChart data={data} />
-                            </div>
-                            <div>
-                                <h2 style={{ textAlign: "center" }}>Thống kê chất lượng mẫu nước</h2>
-                                <MeasurementLineChart data={wqiData} />
-                            </div>
+                            {data && data.length > 0 ? (
+                                <div>
+                                    <h2 style={{ textAlign: "center" }}>Thống kê chất lượng mẫu nước</h2>
+                                    <DonutChart data={data} />
+                                </div>
+                            ):null}
+                            {wqiData && wqiData.length > 0 ? (
+                                <div>
+                                    <h2 style={{ textAlign: "center" }}>Thống kê chất lượng mẫu nước</h2>
+                                    <MeasurementLineChart data={wqiData} />
+                                </div>
+                            ):null}
                         </div>
                     </div>
                 </div>

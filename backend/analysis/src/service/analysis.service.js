@@ -51,6 +51,15 @@ class AnalysisService {
     const rows = await pool.query(query, parameters);
     return rows[0];
   }
+  
+  async getDataSet(limit, ub, lb, startDate, endDate, i){
+    console.log(limit);
+    
+    let query = "SELECT * FROM alldata WHERE wqi <= ? AND wqi >= ? AND date BETWEEN ? AND ? LIMIT ? OFFSET ?";
+    let params = [ub || 100, lb || 0, startDate || "2022/01/01", endDate || "2025/01/01", Number(limit) || 10, Number(i) || 0];
+    const rows = await pool.query(query,params);
+    return rows[0];
+  }
 }
 
 module.exports = new AnalysisService();

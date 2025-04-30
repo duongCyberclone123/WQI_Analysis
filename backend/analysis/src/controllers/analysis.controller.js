@@ -61,6 +61,16 @@ class AnalysisController {
             res.status(500).json({ error: 'Internal server error' });
         }
     }
+
+    async getDataSet(req, res){
+        try{
+            const result = await AnalysisService.getDataSet(req.query.limit, req.query.ub, req.query.lb, req.query.startDate, req.query.endDate, req.query.offset);
+            res.status(200).json({data: result});
+        }
+        catch (e){
+            res.status(500).json({message: e.message})
+        }
+    }
 }
 
 module.exports = new AnalysisController();

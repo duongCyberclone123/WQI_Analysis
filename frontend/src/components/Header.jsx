@@ -68,12 +68,12 @@ export default function Header() {
                 height: 100px;
                 align-items: center;
                 position: fixed;
-                margin: 0;
-                margin-top: -20px;
-                margin-left: -10px;
+                top: 0;              /* thêm top: 0 để ghim lên đầu */
+                left: 0;             /* thêm left: 0 để không lệch */
                 padding: 10px 20px;
                 z-index: 1000;
             }
+
             .header h1 {
                 font-size: 24px;
                 margin-right: 0px;
@@ -103,6 +103,8 @@ export default function Header() {
             <nav className="navbar">
                 <a href="/home">Home</a>
                 <a href="/dashboard">Dashboard</a>
+                <a href="/model">AI Model</a>
+                <a href="/report">Report</a>
                 <div>{user.uid}</div>
             </nav>
         </header>
