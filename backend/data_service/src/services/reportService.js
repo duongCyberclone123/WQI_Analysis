@@ -14,13 +14,9 @@ async function generateReportData(startDate, endDate, location) {
     where: {
       date: {
         [Op.between]: [startDate, endDate]
-      }
-    },
-    include: [{
-      model: ObservePlace,
-      as: 'observePlace',
-      where: { opname: location } // lọc theo tên
-    }]
+      },
+      opid: location // Điều chỉnh nếu location cần ánh xạ tới observation_place
+    }
   });
 
   return data;
