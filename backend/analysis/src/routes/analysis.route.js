@@ -12,6 +12,7 @@ router.get('/water_quality', AnalysisController.water_quality);
 router.get('/map', AnalysisController.Place_data);
 router.get('/observe', AnalysisController.getObservationAt);
 router.get('/fetch', AnalysisController.getDataSet)
+router.post('/insert', AnalysisController.postNewRecord)
 const PDFDocument = require('pdfkit');
 require('pdfkit-table'); // Thêm table method vào PDFDocument prototype
 const path = require('path');

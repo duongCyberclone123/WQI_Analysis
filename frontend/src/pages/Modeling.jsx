@@ -73,6 +73,29 @@ export default function Modeling() {
                     }
                 }
             );
+            await axios.post("http://localhost:3002/analysis/insert", {
+                place: placeNo,
+                temperature: temp,
+                pH: pH,
+                DO: DO,
+                conduct: con,
+                alkan: alkan,
+                no2: no2,
+                nh4: nh4,
+                po4: po4,
+                h2s: h2s,
+                tss: tss,
+                cod: cod,
+                aero_total: totalAe,
+                edward: edward,
+                aero_hydro: aero,
+                coliform: coliform,
+                wqi: res.data.prediction[0],
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
             console.log(res.data);
             setWqi(res.data.prediction[0]);
         } catch (error) {

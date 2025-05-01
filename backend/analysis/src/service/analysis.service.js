@@ -60,6 +60,16 @@ class AnalysisService {
     const rows = await pool.query(query,params);
     return rows[0];
   }
+
+  async postNewRecord(data) {
+    const {place, temperature, pH, DO, conduct, alkan, no2, nh4, po4, h2s, tss, cod, aero_total,edward, aero_hydro, coliform, wqi} = data;
+    const date = new Date().toISOString().slice(0, 10);
+    await pool.query("CREATE TABLE IF NOT EXISTS model (id INT AUTO_INCREMENT PRIMARY KEY, place INT, date DATE, temperature FLOAT, pH FLOAT, DO FLOAT, conduct FLOAT, alkan FLOAT, no2 FLOAT, nh4 FLOAT, po4 FLOAT, h2s FLOAT, tss FLOAT, cod FLOAT, aero_total FLOAT, edward FLOAT, aero_hydro FLOAT, coliform FLOAT, wqi FLOAT)");
+    await pool.query("INSERT INTO model (place, date, temperature, pH, DO, conduct, alkan, no2, nh4, po4, h2s, tss, cod, aero_total, edward, aero_hydro, coliform, wqi) VALUES (?,?, ?, ?,?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+       [place,date, temperature, pH, DO, conduct, alkan, no2, nh4, po4, h2s, tss, cod, aero_total, edward, aero_hydro, coliform, wqi]);
+    return data;
+  }
+
 }
 
 module.exports = new AnalysisService();
