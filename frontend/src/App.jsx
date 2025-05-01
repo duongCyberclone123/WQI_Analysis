@@ -7,7 +7,7 @@ import LandingPage from './pages/LandingPage';
 import Register from './pages/Register';
 import Verification from './pages/Verification';
 import Report from './pages/Report';
-
+import Modeling from './pages/Modeling'
 // Admin imports
 import AdminHome from './admin/AdminHome';
 
@@ -23,6 +23,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />  
             <Route path="/home" element={<Home />} /> 
             <Route path="/report" element={<Report />} /> 
+            <Route path="/model" element={<Modeling />} />
             {/* Admin routes */}
             <Route path="/admin" element={<AdminHome />} /> 
             {/* Add more routes as needed */}      

@@ -273,14 +273,79 @@ export default function Report() {
                     <div></div>
                 </div>
             </div>
-            <div style={{display: "flex", justifyContent: "space-between", marginTop: "20px"}}>
-                <select value={limitRecord} onChange={(e) => setLimitRecord(e.target.value)} style={{width: "60px", height: "20px", border: "2px solid #09192A", justifyContent: "center", textAlign: "center", justifyItems: "center", alignItems:"center", marginBottom: "30px", borderRadius: "10px", backgroundColor: "#FF9", paddingTop: "0px"}}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "20px" }}>
+                <style>
+                    {`
+                    select {
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+
+                        padding: 10px 15px;
+                        font-size: 16px;
+                        border: 1px solid #ccc;
+                        border-radius: 8px;
+                        background-color: #fff;
+                        color: #333;
+                        min-width: 100px;
+
+                        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+                        transition: border-color 0.3s, box-shadow 0.3s;
+
+                        background-image: url("data:image/svg+xml,%3Csvg fill='gray' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+                        background-repeat: no-repeat;
+                        background-position: right 10px center;
+                        background-size: 12px;
+                        padding-right: 35px;
+                    }
+
+                    select:focus {
+                        border-color: #4a90e2;
+                        outline: none;
+                        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+                    }
+
+                    .nav-button {
+                        background-color: #4a90e2;
+                        color: white;
+                        border: none;
+                        padding: 10px 15px;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        font-weight: 500;
+                        transition: background-color 0.3s, transform 0.2s;
+                    }
+
+                    .nav-button:hover {
+                        background-color: #357ab8;
+                        transform: scale(1.03);
+                    }
+
+                    .nav-button:disabled {
+                        background-color: #ccc;
+                        cursor: not-allowed;
+                    }
+                    `}
+                </style>
+
+                <select value={limitRecord} onChange={(e) => setLimitRecord(e.target.value)}>
                     {lstLimitRecord.map((item, id) => (
-                        <option key={id} value={item} onClick={() => setLimitRecord(item)}>{item}</option>
+                    <option key={id} value={item}>{item}</option>
                     ))}
                 </select>
-                <div style={{cursor: "pointer"}} onClick={() => setStartIdx(startIdx - limitRecord <= 0 ? startIdx : startIdx - limitRecord)}>Prev</div>
-                <div style={{cursor: "pointer"}} onClick={() => setStartIdx(startIdx + limitRecord >= 1612 ? startIdx : startIdx + limitRecord)}>Next</div>
+
+                <button
+                    className="nav-button"
+                    onClick={() => setStartIdx(startIdx - limitRecord <= 0 ? startIdx : startIdx - limitRecord)}
+                >
+                    Prev
+                </button>
+                <button
+                    className="nav-button"
+                    onClick={() => setStartIdx(startIdx + limitRecord >= 1612 ? startIdx : startIdx + limitRecord)}
+                >
+                    Next
+                </button>
             </div>
         </>
     );

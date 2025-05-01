@@ -5,54 +5,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import {PieChart, Pie, Cell, LineChart, Line,BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
-  
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042','#FF00FF'];
-
-function MeasurementLineChart({ data }) {
-    console.log("Line chart data: ", data);
-    return (
-        <ResponsiveContainer width={400} height={400}> {/* 👈 thêm height vào đây */}
-            <LineChart data={data}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="year" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Line type="monotone" dataKey="avgWqi" stroke="#8884d8" name="WQI trung bình" />
-            </LineChart>
-        </ResponsiveContainer>
-    );
-  }
-
-function DonutChart({ data }) {
-    const keys = ["Tệ", "Khá tệ", "Trung bình", "Khá tốt", "Tốt"];
-    const newArr = data.map((item, index) => ({
-        name: keys[index],
-        value: item
-      }));
-    
-    return (
-      <PieChart width={400} height={400}>
-        <Pie
-          data={ newArr}
-          cx="50%"    // tâm X
-          cy="50%"    // tâm Y
-          innerRadius={70}   // bán kính trong => tạo lỗ
-          outerRadius={120}  // bán kính ngoài
-          fill="#8884d8"
-          paddingAngle={5}   // khoảng cách giữa các miếng
-          dataKey="value"
-          label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-        >
-          {newArr.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Tooltip />
-        <Legend />
-      </PieChart>
-    );
-  }
+import AIChatbot from "../components/AIChatbot";  
+import { MeasurementLineChart, DonutChart, ProvinceLineChart } from "../components/Chart";
 
 function Dashboard() {
         const [ops, setOps] = useState(0);
@@ -159,24 +113,56 @@ function Dashboard() {
                         }
                     });
                     const rawData = response.data.observation;
-                    const yearMap = {};
+                    console.log("Raw data: ", rawData);
+                    const processedData = rawData.map(item => {
+                        const date = new Date(item.date);
+                        return {
+                            year: date.getFullYear(),
+                            month: date.getMonth() + 1, // Lấy tháng, bắt đầu từ 0, vì vậy cộng thêm 1
+                            wqi: item.wqi,
+                            province: item.province,
+                            district: item.district,
+                            observation_point: item.observation_point
+                        };
+                    });
+                    const yearMonthMap = {};
 
-                    rawData.forEach(item => {
-                        const year = new Date(item.date).getFullYear();
-                        if (!yearMap[year]) {
-                            yearMap[year] = { total: 0, count: 0 };
+                    processedData.forEach(item => {
+                        const key = `${item.year}-${item.month}`; // Tạo key theo năm và tháng
+                        if (!yearMonthMap[key]) {
+                            yearMonthMap[key] = {
+                                total: 0,
+                                count: 0,
+                                province: item.province, // Lưu province
+                                district: item.district, // Lưu district
+                                observation_point: item.observation_point // Lưu observation_point
+                            };
                         }
-                        yearMap[year].total += item.wqi;
-                        yearMap[year].count += 1;
+                        yearMonthMap[key].total += item.wqi;
+                        yearMonthMap[key].count += 1;
                     });
 
-                    const processedData = Object.entries(yearMap).map(([year, { total, count }]) => ({
-                        year: parseInt(year),
-                        avgWqi: parseFloat((total / count).toFixed(2))
-                    }));
-                    
-                    console.log("WQI data: ", processedData);
-                    setWqiData(processedData);
+                    // Chuyển đổi thành mảng dữ liệu đã xử lý
+                    const finalData = Object.entries(yearMonthMap).map(([key, { total, count, province, district, observation_point }]) => {
+                        const [year, month] = key.split('-');
+                        return {
+                            year: parseInt(year),
+                            month: parseInt(month),
+                            label: `${year}-${String(month).padStart(2, '0')}`,
+                            avgWqi: parseFloat((total / count).toFixed(2)),
+                            province: province,
+                            district: district,
+                            observation_point: observation_point
+                        };
+                    });
+                    const sortedData = finalData.sort((a, b) => {
+                        if (a.year === b.year) {
+                            return a.month - b.month; // So sánh tháng nếu năm giống nhau
+                        }
+                        return a.year - b.year; // So sánh năm
+                    });
+                    console.log("WQI data unclustered: ", sortedData);
+                    setWqiData(sortedData);
                 } catch (error) {
                     console.error("Error fetching data:", error);
                 }
@@ -363,7 +349,7 @@ function Dashboard() {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <AIChatbot />
             </>):null
     );
 }
