@@ -14,5 +14,7 @@ app.use(cors({
 
 const analysisRoutes = require("./routes/analysis.route");
 app.use("/analysis", analysisRoutes);
+const userRoutes = require("./routes/users.route");
+app.use("/users", userRoutes);
 
 module.exports = app;

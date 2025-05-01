@@ -27,7 +27,7 @@ function Login() {
         const onSubmit = async(e) => {
             e.preventDefault();
             const data = { email, password };
-            const response = await fetch("http://localhost:8000/auth/login", {
+            const response = await fetch("http://localhost:3001/auth/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

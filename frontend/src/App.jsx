@@ -10,13 +10,14 @@ import Report from './pages/Report';
 import Modeling from './pages/Modeling'
 // Admin imports
 import AdminHome from './admin/AdminHome';
+import UserManagement from './admin/UserManagement';
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/verify" element={<Verification />} />
             <Route path="/login" element={<Login />} />
@@ -26,6 +27,7 @@ function App() {
             <Route path="/model" element={<Modeling />} />
             {/* Admin routes */}
             <Route path="/admin" element={<AdminHome />} /> 
+            <Route path="/admin/user-management" element={<UserManagement />} />
             {/* Add more routes as needed */}      
         </Routes>
       </AuthProvider>

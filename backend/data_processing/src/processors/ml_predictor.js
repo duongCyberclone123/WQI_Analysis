@@ -37,7 +37,7 @@ async function predictWQI(readings, locationInfo) {
     if (response.data && response.data.prediction) {
       const wqi = response.data.prediction[0];
       const waterQuality = determineWaterQuality(wqi);
-
+      
       return {
         wqi,
         waterQuality,

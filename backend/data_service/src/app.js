@@ -4,18 +4,15 @@ const adminRoutes = require('./routes/adminRoutes');
 require('dotenv').config();
 
 app.use(express.json());
-// app.use('/api/admin', adminRoutes);
+app.use('/api/admin', adminRoutes);
 
-// const deviceRoutes = require('./routes/deviceRoutes');
-// app.use('/api/devices', deviceRoutes);
+const deviceRoutes = require('./routes/deviceRoutes');
+app.use('/api/devices', deviceRoutes);
 
-// const monitorRoutes = require('./routes/monitorRoutes');
-// app.use('/api/monitor', monitorRoutes);
+const monitorRoutes = require('./routes/monitorRoutes');
+app.use('/api/monitor', monitorRoutes);
 
-// const alertRoutes = require('./routes/alertRoutes');
-// app.use('/api/alerts', alertRoutes);
-
-const reportRoutes = require('./routes/reportRoutes');
-app.use('/api/report', reportRoutes);
+const alertRoutes = require('./routes/alertRoutes');
+app.use('/api/alerts', alertRoutes);
 
 module.exports = app;

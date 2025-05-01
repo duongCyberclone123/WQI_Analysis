@@ -15,20 +15,21 @@ class AdminHome extends React.Component{
                     font-family: Arial, sans-serif;
                     margin: 0;
                     padding: 0;
-                    background-image: url('https://img.freepik.com/premium-photo/serene-water-droplets-with-gentle-waves-reflections_100209-6223.jpg');
+                    background-image: url('https://www.labnetinternational.com/sites/www.labnetinternational.com/files/blogsies/header-images/iStock-949946968.jpg');
                 }
                 h1 {
                     text-align: center;
                     margin-top: 20px;
-                    font-size: 36px;
+                    font-size: 40px;
+                    color: white;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
                 }
                 `}
             </style>
             <Header />
-            <div>
-                <h1>WELCOME TO WATER RESEARCHING MANAGEMENTS</h1>
+            <div style={{ textAlign: "center", marginTop: "190px" }}>
+                <h1>WELCOME TO WATER RESEARCHING LABORATORY</h1>
             </div>
-            <Footer />
             </>
         )
     }

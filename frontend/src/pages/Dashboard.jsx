@@ -94,12 +94,18 @@ function Dashboard() {
                     console.error("Error fetching data:", error);
                 }
             };
+            const fetchData = async () => {
+                await fetchops();
+                await fetchobs();
+                await fetchvalid();
+                await fetchwater();
+                await fetchMap();
+            }
+            fetchData(); // Gọi hàm fetchData ngay lập tức
+            const interval = setInterval(fetchData, 10000);
 
-            fetchops();
-            fetchobs();
-            fetchvalid();
-            fetchwater();
-            fetchMap();
+            // Cleanup khi component unmount
+            return () => clearInterval(interval);
         }, []);
 
         useEffect(() => {
@@ -168,6 +174,10 @@ function Dashboard() {
                 }
             };
             fetchWqiData();
+            const interval = setInterval(fetchWqiData, 10000);
+
+            // Cleanup khi component unmount
+            return () => clearInterval(interval);
         },[province, district, Ob_point]);
 
         return (1  ? (
