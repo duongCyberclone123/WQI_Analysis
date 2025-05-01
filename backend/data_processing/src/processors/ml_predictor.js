@@ -27,7 +27,7 @@ async function predictWQI(readings, locationInfo) {
       edwardsiella_ictaluri: { 0: readings.edwardsiella_ictaluri },
       aeromonas_hydrophila: { 0: readings.aeromonas_hydrophila },
       coliform: { 0: readings.coliform },
-      water_quality: { 0: 3 }, // Giá trị mặc định, sẽ được thay thế bởi dự đoán
+      // water_quality: { 0: 3 }, // Giá trị mặc định, sẽ được thay thế bởi dự đoán
     };
 
     console.log(`Gửi dữ liệu đến ML service: ${JSON.stringify(inputData)}`);
@@ -50,11 +50,11 @@ async function predictWQI(readings, locationInfo) {
     console.error("Lỗi khi gọi ML service:", error);
 
     // Fallback: Sử dụng phương pháp tính toán truyền thống nếu ML service lỗi
-    const { calculateWQI } = require("./wqi_calculator");
-    const result = calculateWQI(readings);
-    result.isMLPrediction = false;
+    // const { calculateWQI } = require("./wqi_calculator");
+    // const result = calculateWQI(readings);
+    // result.isMLPrediction = false;
 
-    return result;
+    // return result;
   }
 }
 

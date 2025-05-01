@@ -22,9 +22,9 @@ class InputData(BaseModel):
     edwardsiella_ictaluri: Dict[str, float]
     aeromonas_hydrophila: Dict[str, float]
     coliform: Dict[str, float]
-    water_quality: Dict[str, float]
+    # water_quality: Dict[str, float]
 
-with open("model.pkl", 'rb') as f:
+with open("model_v2.pkl", 'rb') as f:
     my_model_clf = pickle.load(f)
 
 app = FastAPI()
