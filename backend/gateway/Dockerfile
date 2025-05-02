@@ -7,5 +7,5 @@ COPY --chown=node:node package*.json ./
 RUN npm cache clean --force && npm install
 RUN npm install bcryptjs
 COPY --chown=node:node . .
-EXPOSE 3003
+EXPOSE 3001
 CMD [ "node", "server.js" ]

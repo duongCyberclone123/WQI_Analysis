@@ -1,5 +1,114 @@
+# version: "3"
+# services:
+#   zookeeper:
+#     image: wurstmeister/zookeeper
+#     ports:
+#       - "2181:2181"
+#     environment:
+#       - ALLOW_ANONYMOUS_LOGIN=yes
+#     networks:
+#       - wqi-network
+
+#   kafka:
+#     image: wurstmeister/kafka
+#     ports:
+#       - "9092:9092"
+#     environment:
+#       KAFKA_ADVERTISED_HOST_NAME: localhost
+#       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+#       KAFKA_CREATE_TOPICS: "raw-sensor-data:1:1,processed-data:1:1,wqi-predictions:1:1,water-quality-alerts:1:1"
+#       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+#     depends_on:
+#       - zookeeper
+#     networks:
+#       - wqi-network
+
+#   mysql:
+#     image: mysql:latest
+#     ports:
+#       - "3307:3308"
+#     environment:
+#       MYSQL_ROOT_PASSWORD: rootpassword
+#       MYSQL_DATABASE: do_an_HTTT
+#     volumes:
+#       - ./backend/mysql/db.sql:/docker-entrypoint-initdb.d/db.sql
+#     networks:
+#       - wqi-network
+
+# networks:
+#   wqi-network:
+#     driver: bridge
 version: "3"
 services:
+  frontend-service:
+    image: frontend:v2
+    ports:
+      - "3000:3000"
+    depends_on:
+      - analysis-service
+      # - alert-service
+      - auth-service
+      - chatbot-service
+      - data-service
+      - ai-model-service
+    environment:
+      HOST_NAME: localhost
+    networks:
+      - wqi-network
+
+  analysis-service:
+    image: analysis-service:v1
+    ports:
+      - "3002:3002"
+    depends_on:
+      - mysql
+    networks:
+      - wqi-network
+
+  chatbot-service:
+    build: ./backend/chatbot_service
+    ports:
+      - "3005:3005"
+    depends_on:
+      - mysql
+    networks:
+      - wqi-network
+
+  auth-service:
+    image: auth:v1
+    ports:
+      - "3001:3001"
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=12345
+      - DB_NAME=do_an_HTTT
+    depends_on:
+      - mysql
+    networks:
+      - wqi-network
+  ai-model-service:
+    image: ml_model:v1
+    ports:
+      - "8000:8000"
+    networks:
+      - wqi-network
+  ################ DATA SERVICE ################
+  data-service:
+    image: data-service:v1
+    ports:
+      - "3003:3003"
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=12345
+      - DB_NAME=do_an_HTTT
+    depends_on:
+      - mysql
+    networks:
+      - wqi-network
+  ################ DATA SERVICE ################
+
   zookeeper:
     image: wurstmeister/zookeeper
     ports:
@@ -26,7 +135,7 @@ services:
   mysql:
     image: mysql:latest
     ports:
-      - "3307:3308"
+      - "3311:3312"
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: do_an_HTTT
