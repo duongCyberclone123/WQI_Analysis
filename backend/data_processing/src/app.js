@@ -5,13 +5,14 @@ const { detectAnomalies } = require("./processors/anomaly_detector");
 const { predictWQI } = require("./processors/ml_predictor");
 const mysql = require("mysql2/promise");
 // require("dotenv").config();
-
 const pool = mysql.createPool({
-  host: "localhost",
+  host: "ballast.proxy.rlwy.net",
   user: "root",
-  password: "123456",
-  database: "do_an_HTTT"
+  password: "IKSzaRZEQpcOoUNdzTVgHzibDYptqDip",
+  database: "railway",
+  port: 50205
 });
+
 // Kết nối đến Kafka
 const kafka = new Kafka({
   clientId: "data-processing-service",

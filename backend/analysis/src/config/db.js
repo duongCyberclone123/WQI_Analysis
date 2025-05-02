@@ -1,11 +1,11 @@
 const mysql = require("mysql2/promise");
-// require("dotenv").config();
 
 const pool = mysql.createPool({
-  host: "localhost",
+  host: "ballast.proxy.rlwy.net",
   user: "root",
-  password: "123456",
-  database: "do_an_HTTT"
+  password: "IKSzaRZEQpcOoUNdzTVgHzibDYptqDip",
+  database: "railway",
+  port: 50205
 });
 
 module.exports = pool;
