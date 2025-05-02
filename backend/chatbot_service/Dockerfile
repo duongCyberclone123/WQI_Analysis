@@ -6,6 +6,7 @@ WORKDIR /app
 COPY --chown=node:node package*.json ./
 RUN npm cache clean --force && npm install
 RUN npm install bcryptjs
+RUN npm install -g nodemon
 COPY --chown=node:node . .
-EXPOSE 3003
-CMD [ "node", "server.js" ]
+EXPOSE 3005
+CMD [ "node", "app.js" ]
