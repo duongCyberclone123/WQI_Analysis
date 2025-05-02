@@ -5,7 +5,7 @@ import axios from "axios";
 export default function Header() {
     const navigate = useNavigate();
     const [user, setUser] = useState(localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null);
-    alert(user.role)
+
     return(user == null?
         <>
         <style>
