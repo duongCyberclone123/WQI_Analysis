@@ -1,0 +1,47 @@
++------------------+            +----------------------+
+| IoT Simulator    |            | Topic:               |
+| (Node.js)        +----------->+ raw-sensor-data      |
++------------------+   Publish  +----------+-----------+
+                                           |
+                                           | 
+                                           v
++------------------+            +----------------------+         +------------------+
+| Data Processing  |<-----------+ Schema:              |         | ML Service       |
+| Service (Node.js)|  Consume   | - timestamp          +-------->+ (Python/FastAPI) |
++--------+---------+            | - observation_point  |  Call   +------------------+
+         |                      | - readings (sensors) |
+         |                      +----------------------+
+         |
+         |     +------------------+         +----------------------+
+         |     | Topic:           |         | Schema:              |
+         +---->+ processed-data   +-------->+ - timestamp          |
+         |     | (processed, WQI) |  Consume| - observation_point  |
+         |     +------------------+         | - readings           |
+         |                                  | - wqi                |
+         |                                  | - water_quality      |
+         |                                  | - anomalies          |
+         |                                  +----------+-----------+
+         |                                             |
+         |                                             | Consume
+         |                                             v
+         |                                  +----------------------+         +------------------+
+         |                                  | WebSocket Server     +-------->+ Frontend         |
+         |                                  | (Node.js)            |  Send   | (React)          |
+         |                                  +----------------------+  data   +------------------+
+         |
+         |     +------------------+         +----------------------+
+         |     | Topic:           |         | Schema:              |
+         +---->+ water-quality-   +-------->+ - timestamp          |
+               | alerts           |  Consume| - alert_id           |
+               +------------------+         | - severity           |
+                                            | - observation_point  |
+                                            | - wqi                |
+                                            | - anomalies          |
+                                            +----------+-----------+
+                                                       |
+                                                       | Consume
+                                                       v
+                                            +----------------------+         +------------------+
+                                            | Alert Service        +-------->+ Email            |
+                                            | (Node.js)            |  Send   | Notifications    |
+                                            +----------------------+  alert  +------------------+
