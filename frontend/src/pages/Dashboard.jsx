@@ -274,7 +274,7 @@ function Dashboard() {
                             </div>
                             <div className="Stat">
                                 <h2>Số mẫu nước đạt tiêu chuẩn</h2>
-                                <h1>{valid} ({(valid/1612*100).toFixed(2)}%)</h1>
+                                <h1>{valid} ({(valid/obs*100).toFixed(2)}%)</h1>
                             </div>
                         </div>
                         <div className="sort-bar" style={{display: "flex", flexWrap: "wrap", gap: "20px"}}>
