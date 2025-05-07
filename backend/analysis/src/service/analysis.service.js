@@ -36,17 +36,17 @@ class AnalysisService {
     let query = "";
     let parameters = [];
     if (province && district && ob_place) {
-      query = `SELECT wqi, date, province, district, observation_point FROM alldata WHERE province = ? AND district = ? AND observation_point = ?`;
+      query = `SELECT wqi, date, province, district, observation_point, coordinate FROM alldata WHERE province = ? AND district = ? AND observation_point = ?`;
       parameters = [province, district, ob_place];
     }
     else if (province && district) {
-      query = `SELECT wqi, date, province, district, observation_point FROM alldata WHERE province = ? AND district = ?`;
+      query = `SELECT wqi, date, province, district, observation_point, coordinate FROM alldata WHERE province = ? AND district = ?`;
       parameters = [province, district];
     } else if (province) {
-      query = `SELECT wqi, date, province, district, observation_point FROM alldata WHERE province = ?`;
+      query = `SELECT wqi, date, province, district, observation_point, coordinate FROM alldata WHERE province = ?`;
       parameters = [province];
     } else {
-      query = `SELECT wqi, date, province, district, observation_point FROM alldata`;
+      query = `SELECT wqi, date, province, district, observation_point, coordinate FROM alldata`;
     }
     const rows = await pool.query(query, parameters);
     return rows[0];

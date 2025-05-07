@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import {PieChart, Pie, Cell, LineChart, Line,BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 import AIChatbot from "../components/AIChatbot";  
 import { MeasurementLineChart, DonutChart, ProvinceLineChart } from "../components/Chart";
+import MapViewer from "../components/Map";
 
 function Dashboard() {
         const [ops, setOps] = useState(0);
@@ -20,6 +21,16 @@ function Dashboard() {
         const [Ob_point, setObPoint] = useState("");
         const [filterObPoints, setFilterObPoints] = useState([]);
         const [wqiData, setWqiData] = useState([]);
+
+        const Coordinate = (str) => {
+            const coordinates = str.split("-").map(coord => parseFloat(coord.trim()));
+            if (coordinates.length === 2) {
+                return coordinates;
+            } else {
+                return [0, 0]; // Hoặc giá trị mặc định khác nếu không thể phân tích cú pháp
+            }
+        }
+
         const handleClickProvince = (province) => {
             setProvince(province);
             setFilterProvinces([]);
@@ -128,7 +139,9 @@ function Dashboard() {
                             wqi: item.wqi,
                             province: item.province,
                             district: item.district,
-                            observation_point: item.observation_point
+                            observation_point: item.observation_point,
+                            lat: Coordinate(item.coordinate)[0],
+                            lng: Coordinate(item.coordinate)[1]
                         };
                     });
                     const yearMonthMap = {};
@@ -141,7 +154,9 @@ function Dashboard() {
                                 count: 0,
                                 province: item.province, // Lưu province
                                 district: item.district, // Lưu district
-                                observation_point: item.observation_point // Lưu observation_point
+                                observation_point: item.observation_point, // Lưu observation_point
+                                lat: item.lat,
+                                lng: item.lng
                             };
                         }
                         yearMonthMap[key].total += item.wqi;
@@ -149,7 +164,7 @@ function Dashboard() {
                     });
 
                     // Chuyển đổi thành mảng dữ liệu đã xử lý
-                    const finalData = Object.entries(yearMonthMap).map(([key, { total, count, province, district, observation_point }]) => {
+                    const finalData = Object.entries(yearMonthMap).map(([key, { total, count, province, district, observation_point, lat, lng }]) => {
                         const [year, month] = key.split('-');
                         return {
                             year: parseInt(year),
@@ -158,7 +173,9 @@ function Dashboard() {
                             avgWqi: parseFloat((total / count).toFixed(2)),
                             province: province,
                             district: district,
-                            observation_point: observation_point
+                            observation_point: observation_point,
+                            lat: lat,
+                            lng: lng
                         };
                     });
                     const sortedData = finalData.sort((a, b) => {
@@ -254,13 +271,22 @@ function Dashboard() {
                     width: 100%;
                     height: 100%;
                 }
+                .content{
+                    background-image: url("/assets/nbg.png");
+                }
+                .chart-mask{
+                    border: 2px solid #333;
+                    border-radius: 5px;
+                    background-color: #f0f0f0; 
+                    align-items: center;                  
+                }
             `}</style>
             <Header />
             <div className="dashboard-container" >
                 <div className="dashboard-content">
                     <div className="head-tag">
                         <span></span>
-                        <h1><b>WATER QUALITY OVERVIEW</b></h1>
+                        <h1><b>WATER QUALITY OVERVIEW</b> <span style={{textAlign: "right", width:"80%"}}><a href="#">Chi tiết</a></span></h1>
                     </div>
                     <div className="content">
                         <div className="Overview" style={{ display: "flex", gap: "40px", flexWrap: "wrap"  }}>
@@ -343,18 +369,33 @@ function Dashboard() {
                             </div>
                         </div>
                         <div className="chart" style={{ marginTop: "20px", width: "100%", display: "flex", alignItems: "center",justifyContent:"center", flexWrap:"wrap", gap: "40px" }}>
-                            {data && data.length > 0 ? (
-                                <div>
-                                    <h2 style={{ textAlign: "center" }}>Thống kê chất lượng mẫu nước</h2>
-                                    <DonutChart data={data} />
-                                </div>
-                            ):null}
-                            {wqiData && wqiData.length > 0 ? (
-                                <div>
-                                    <h2 style={{ textAlign: "center" }}>Thống kê chất lượng mẫu nước</h2>
-                                    <MeasurementLineChart data={wqiData} />
-                                </div>
-                            ):null}
+                                {data && data.length > 0 ? (
+                                    <div className="chart-mask">
+                                        <h2 style={{ textAlign: "center" }}>Thống kê chất lượng mẫu nước</h2>
+                                        <div style={{marginRight: "20px"}}>
+                                        <DonutChart data={data} />
+                                        </div>
+                                        
+                                    </div>
+                                ):null}
+                                {wqiData && wqiData.length > 0 ? (
+                                    <div className="chart-mask">
+                                        <h2 style={{ textAlign: "center" }}>Thống kê chất lượng mẫu nước</h2>
+                                        <div style={{marginRight: "20px"}}>
+                                            <MeasurementLineChart data={wqiData} />
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                ):null}
+                                <div style={{width: "4px", height: "400px", backgroundColor: "#f0f0f0"}}></div>
+                                {wqiData && wqiData.length > 0 ? (
+                                    <div className="chart-mask">
+                                        <div style={{marginRight: "20px"}}>
+                                        <MapViewer lat={wqiData[0].lat} lng={wqiData[0].lng} zoom={13} address={wqiData[0].observation_point + ", " + wqiData[0].district + ", " + wqiData[0].province} />
+                                        </div>
+                                    </div>
+                                ):null}
                         </div>
                     </div>
                 </div>

@@ -65,6 +65,7 @@ async function processMessage(message) {
       validatedData.readings.po4, validatedData.readings.h2s, validatedData.readings.tss, validatedData.readings.cod,
       validatedData.readings.aeromonas_total, validatedData.readings.edwardsiella_ictaluri, validatedData.readings.aeromonas_hydrophila, validatedData.readings.coliform, 
       wqiResult.wqi, wqiResult.waterQuality]);
+    await pool.query(`UPDATE retrain SET count = count + 1`)
     // Bước 4: Gửi dữ liệu đã xử lý vào topic khác
     await producer.send({
       topic: "processed-data",
