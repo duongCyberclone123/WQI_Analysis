@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Header from "../components/Header";
+import HeaderRes from "../components/HeaderRes";
 import AIChatbot from "../components/AIChatbot";
+import { useRef } from "react";
+import '../style/model.css'
 
 export default function Modeling() {
 
@@ -68,7 +70,7 @@ export default function Modeling() {
                     water_quality: { "location1": 95 }
                 },
                 {
-                    headers: {
+                    HeaderResResResRess: {
                         'Content-Type': 'application/json'
                     }
                 }
@@ -92,7 +94,7 @@ export default function Modeling() {
                 coliform: coliform,
                 wqi: res.data.prediction[0],
             }, {
-                headers: {
+                HeaderResResResRess: {
                     'Content-Type': 'application/json'
                 }
             });
@@ -104,59 +106,27 @@ export default function Modeling() {
         }
     };
     
+    const refA = useRef(null);
+    const refB = useRef(null);
+
+    useEffect(() => {
+        if (refA.current && refB.current) {
+        refB.current.style.height = `${refA.current.offsetHeight}px`;
+        }
+    }, []);
 
     return (
         <>
-            <Header />    
-            <style>
-                {`
-                .head-tag {
-                    display: flex;
-                    padding: 10px;
-                    border-radius: 5px;
-                    width: 98%;
-                    justify-items: center;
-                    margin-top: 100px;
-                }
-                .head-tag h1 {
-                    font-size: 24px;
-                    background-color: #4CAF50;
-                    padding: 10px;
-                    border-radius: 0 5px 5px 0;
-                    color: white;
-                    width: 100%;
-                }
-                .head-tag span {
-                    width: 10px;
-                    margin-top: 16px;
-                    margin-bottom: 16px;
-                    border-radius: 5px 0 0 5px;
-                    background-color: #4CA;
-                }
-                .content {
-                    padding: 10px;
-                    border-radius: 5px;
-                    margin-left: 10px;
-                    justify-items: center;
-                    background-color: white;
+            <HeaderRes />   
+            <style>{`
+                .content{
                     background-image: url("/assets/nbg.png");
-                    width: 100%;
-                    overflow-x: scroll;
-                    -webkit-overflow-scrolling: touch;
-                    scrollbar-width: none;
-                    padding: 3% 4%;
                 }
-                .chart-mask{
-                    border: 2px solid #333;
-                    border-radius: 5px;
-                    background-color: #f0f0f0; 
-                    align-items: center;                  
-                }
-                `}
+            `} 
             </style>
             <div className="head-tag">
                 <span></span>
-                <h1><b>WQI PREDICTION WITH XGBOOST</b> <span style={{textAlign: "right", width:"80%"}}><a href="#">Chi tiết</a></span></h1>
+                <h1><b>WQI PREDICTION</b> <span style={{textAlign: "right", width:"80%"}}><a href="#">Chi tiết</a></span></h1>
             </div>
             <div style={{marginTop: '30px', display: "flex", flexWWrap: "wrap", gap:"20px" }}>
             <div className="content">
@@ -235,25 +205,26 @@ export default function Modeling() {
                     }
                     `}
             </style>
-                <div style={{display:"flex", gap: "20px"}}>
-                    <div className="chart-mask" style={{width: "100%", height: "auto", overflowX: "scroll", alignItems: "center", padding: "10px",scrollbarWidth: 'none',}}>
+                <div style={{display:"flex", gap: "20px", width: "100%"}} ref={refA}>
+                    <div style={{overflowX: "scroll", scrollbarWidth: 'none',}}>
+                    <div className="chart-mask" style={{ height: "auto", overflowX: "scroll", alignItems: "center", padding: "10px",scrollbarWidth: 'none',}}>
                         <div style={{
                             alignItems: "center", marginTop: "20px",
                             display: 'grid',
-                            gridTemplateColumns: '1fr 1fr 1fr',
+                            gridTemplateColumns: '1fr 1fr 1fr 1fr',
                             gap: '20px', overflowX:"scroll",
                             WebkitOverflowScrolling: 'hidden',
                             scrollbarWidth: 'none',
                         }}>
-                            <div display="flex" style={{gap: "10px", alignItems: "center"}}>
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
                                 <label style={{fontSize: "20px"}}>Place No:</label>
                                 <input type="number" value={placeNo} onChange={(e) => setPlaceNo(e.target.value)} placeholder="Nhập mã vị trí" />
                             </div>
-                            <div>
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
                                 <label style={{fontSize: "20px"}}>Temperature:</label>
                                 <input type="number" value={temp} onChange={(e) => setTemp(e.target.value)} placeholder="Nhập nhiệt độ" />
                             </div>
-                            <div>
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
                                 <label style={{fontSize: "20px"}}>pH:</label>
                                 <input type="number" value={pH} onChange={(e) => setpH(e.target.value)} placeholder="Nhập pH" />
                             </div>
@@ -261,7 +232,7 @@ export default function Modeling() {
                         <div style={{
                             alignItems: "center", marginTop: "20px",
                             display: 'grid',
-                            gridTemplateColumns: '1fr 1fr 1fr',
+                            gridTemplateColumns: '1fr 1fr 1fr 1fr',
                             gap: '20px', overflowX:"scroll",
                             WebkitOverflowScrolling: 'hidden',
                             scrollbarWidth: 'none',
@@ -299,7 +270,7 @@ export default function Modeling() {
                         <div style={{
                             alignItems: "center", marginTop: "20px",
                             display: 'grid',
-                            gridTemplateColumns: '1fr 1fr 1fr',
+                            gridTemplateColumns: '1fr 1fr 1fr 1fr',
                             gap: '20px', overflowX:"scroll",
                             WebkitOverflowScrolling: 'hidden',
                             scrollbarWidth: 'none',
@@ -337,7 +308,7 @@ export default function Modeling() {
                         <div style={{
                             alignItems: "center", marginTop: "20px",
                             display: 'grid',
-                            gridTemplateColumns: '1fr 1fr 1fr',
+                            gridTemplateColumns: '1fr 1fr 1fr 1fr',
                             gap: '20px', overflowX:"scroll",
                             WebkitOverflowScrolling: 'hidden',
                             scrollbarWidth: 'none',
@@ -425,19 +396,25 @@ export default function Modeling() {
                             </div>
                         </div>
                     </div>
-                    <div style={{width: "4px", height: "140px", backgroundColor: "#000"}}></div>
+                    </div>
+
+                    <div style={{width: "4px", height: "140px", backgroundColor: "#ccc"}} ref={refB}></div>
                     <div style={{height: "140px"}}>
                         <table style={{borderCollapse: 'collapse' }}>
                             <thead>
+                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Model</th>
                                 <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Water Quality Index</th>
                                 <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Water Quality Rate</th>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px"}}>
+                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px", color:"#fff"}}>
+                                        XGBoost
+                                    </td>
+                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px", color:"#fff"}}>
                                         {wqi}
                                     </td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px"}}>
+                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px", color:"#fff"}}>
                                         {wqr}
                                     </td>
                                 </tr>

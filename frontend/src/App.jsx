@@ -3,7 +3,6 @@ import AuthProvider from './components/AuthProvider';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
-import LandingPage from './pages/LandingPage';
 import Register from './pages/Register';
 import Verification from './pages/Verification';
 import Report from './pages/Report';
@@ -11,6 +10,7 @@ import Modeling from './pages/Modeling'
 // Admin imports
 import AdminHome from './admin/AdminHome';
 import UserManagement from './admin/UserManagement';
+import Detail from './pages/DataDetail';
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
             <Route path="/home" element={<Home />} /> 
             <Route path="/report" element={<Report />} /> 
             <Route path="/model" element={<Modeling />} />
+            <Route path='/detail' element={<Detail />} />
             {/* Admin routes */}
             <Route path="/admin" element={<AdminHome />} /> 
             <Route path="/admin/user-management" element={<UserManagement />} />

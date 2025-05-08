@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Header from "../components/Header";
+import HeaderRes from "../components/HeaderRes";
 
 export default function Report() {
     const rows = 10;
@@ -86,7 +86,7 @@ export default function Report() {
 
     return (
         <>
-            <Header />
+            <HeaderRes />
             <div className="filter" style={{marginTop: "150px"}}>
                 <style>
                     {`

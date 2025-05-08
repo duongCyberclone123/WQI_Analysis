@@ -1,13 +1,12 @@
-import React, { use } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import axios from "axios";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import HeaderRes from "../components/HeaderRes";
 import { useState, useEffect } from "react";
-import {PieChart, Pie, Cell, LineChart, Line,BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 import AIChatbot from "../components/AIChatbot";  
-import { MeasurementLineChart, DonutChart, ProvinceLineChart } from "../components/Chart";
+import { MeasurementLineChart, DonutChart} from "../components/Chart";
 import MapViewer from "../components/Map";
+import '../style/dashboard.css'
+import { IdentifyProvince, IndentifyDistrict, Coordinate } from "../utils/identifyPlace";
 
 function Dashboard() {
         const [ops, setOps] = useState(0);
@@ -21,41 +20,18 @@ function Dashboard() {
         const [Ob_point, setObPoint] = useState("");
         const [filterObPoints, setFilterObPoints] = useState([]);
         const [wqiData, setWqiData] = useState([]);
-
-        const Coordinate = (str) => {
-            const coordinates = str.split("-").map(coord => parseFloat(coord.trim()));
-            if (coordinates.length === 2) {
-                return coordinates;
-            } else {
-                return [0, 0]; // Hoặc giá trị mặc định khác nếu không thể phân tích cú pháp
-            }
-        }
-
-        const handleClickProvince = (province) => {
-            setProvince(province);
-            setFilterProvinces([]);
-        }
-
-        const IdentifyProvince = (province) => {
-            const selectedProvince = filterProvinces.find(item => item.pname === province);
-            if (selectedProvince) {
-                return selectedProvince.pid;
-            }
-            return null;
-        }
-
-        const IndentifyDistrict = (district) => {
-            const selectedDistrict = filterDistricts.find(item => item.dname === district);
-            if (selectedDistrict) {
-                return selectedDistrict.w_id;
-            }
-            return null;
-        }
+        const [toggle, setToggle] = useState(false);
 
         useEffect(() => {
             const fetchops = async () => {
                 try {
-                    const response = await axios.get("http://localhost:3002/analysis/nb_of_observation_points");
+                    const response = await axios.get("http://localhost:3002/analysis/nb_of_observation_points",{
+                        params: {
+                            province: province,
+                            district: district,
+                            ob_place: Ob_point
+                        }
+                    });
                     setOps(response.data.nb_of_observation_points);
                 } catch (error) {
                     console.error("Error fetching data:", error);
@@ -64,7 +40,13 @@ function Dashboard() {
 
             const fetchobs = async () => {
                 try {
-                    const response = await axios.get("http://localhost:3002/analysis/nb_of_observations");
+                    const response = await axios.get("http://localhost:3002/analysis/nb_of_observations",{
+                        params: {
+                            province: province,
+                            district: district,
+                            ob_place: Ob_point
+                        }
+                    });
                     setObs(response.data.nb_of_observations);
                 } catch (error) {
                     console.error("Error fetching data:", error);
@@ -73,7 +55,13 @@ function Dashboard() {
 
             const fetchvalid = async () => {
                 try {
-                    const response = await axios.get("http://localhost:3002/analysis/valid_quality");
+                    const response = await axios.get("http://localhost:3002/analysis/valid_quality",{
+                        params: {
+                            province: province,
+                            district: district,
+                            ob_place: Ob_point
+                        }
+                    });
                     setValid(response.data.valid_quality);
                 }
                 catch (error) {
@@ -83,7 +71,13 @@ function Dashboard() {
 
             const fetchwater = async () => {
                 try {
-                    const response = await axios.get("http://localhost:3002/analysis/water_quality");
+                    const response = await axios.get("http://localhost:3002/analysis/water_quality",{
+                        params: {
+                            province: province,
+                            district: district,
+                            ob_place: Ob_point
+                        }                        
+                    });
                     const data = response.data.water_quality;
                     setData(data);
                 } catch (error) {
@@ -117,7 +111,7 @@ function Dashboard() {
 
             // Cleanup khi component unmount
             return () => clearInterval(interval);
-        }, []);
+        }, [toggle]);
 
         useEffect(() => {
             const fetchWqiData = async () => {
@@ -195,98 +189,21 @@ function Dashboard() {
 
             // Cleanup khi component unmount
             return () => clearInterval(interval);
-        },[province, district, Ob_point]);
+        },[toggle]);
 
         return (1  ? (
             <>
+            <HeaderRes />
             <style>{`
-                .dashboard-container {
-                    display: flex;
-                    margin-left:-10px;
-                    margin-right:-10px;
-                    background-color: #f0f0f0;
-                    font-family: Arial, sans-serif;
-                }
-                .dashboard-content {
-                    margin-top: 80px;
-                    padding: 20px;
-                    width: 100%;
-                    align-items: center;
-                }
-                .dashboard-content .head-tag {
-                    display: flex;
-                    padding: 10px;
-                    border-radius: 5px;
-                    width: 100%;
-                    justify-items: center;
-                }
-                .dashboard-content .head-tag h1 {
-                    font-size: 24px;
-                    background-color: #4CAF50;
-                    padding: 10px;
-                    border-radius: 0 5px 5px 0;
-                    color: white;
-                    width: 100%;
-                }
-                .dashboard-content .head-tag span {
-                    width: 10px;
-                    margin-top: 16px;
-                    margin-bottom: 16px;
-                    border-radius: 5px 0 0 5px;
-                    background-color: #4CA;
-                }
-                .dashboard-content .content {
-                    padding: 10px;
-                    border-radius: 5px;
-                    margin-left: 10px;
-                    justify-items: center;
-                    background-color: white;
-                }
-                .Stat{
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 20px;
-                    width: 200px;
-                    height: 150px;
-                    border: 2px solid #333;
-                    border-radius: 5px;
-                    background-color: #f0f0f0;
-                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                }
-                .Stat h2 {
-                    content: center;
-                    text-align: center;
-                }
-                .Stat h1 {
-                    text-align: center;
-                    font-size: 30px;
-                    color: #4CAF50;
-                }
-                .Overview{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 20px;
-                    width: 100%;
-                    height: 100%;
-                }
                 .content{
                     background-image: url("/assets/nbg.png");
                 }
-                .chart-mask{
-                    border: 2px solid #333;
-                    border-radius: 5px;
-                    background-color: #f0f0f0; 
-                    align-items: center;                  
-                }
             `}</style>
-            <Header />
             <div className="dashboard-container" >
                 <div className="dashboard-content">
                     <div className="head-tag">
                         <span></span>
-                        <h1><b>WATER QUALITY OVERVIEW</b> <span style={{textAlign: "right", width:"80%"}}><a href="#">Chi tiết</a></span></h1>
+                        <h1><b>WATER QUALITY OVERVIEW</b> <span style={{textAlign: "right", width:"80%"}}><a href="/detail">Chi tiết</a></span></h1>
                     </div>
                     <div className="content">
                         <div className="Overview" style={{ display: "flex", gap: "40px", flexWrap: "wrap"  }}>
@@ -308,7 +225,7 @@ function Dashboard() {
                                 <input
                                     type="text"
                                     value={province}
-                                    onChange={(e) => setProvince(e.target.value)}
+                                    onChange={(e) => {setProvince(e.target.value); setDistrict(""); setObPoint("")}}
                                     list="province-options"  // <-- Phần này bị thiếu
                                     style={{ width: "100%", padding: "8px", boxSizing: "border-box" }}
                                     placeholder="Nhập tên tỉnh..."
@@ -327,7 +244,7 @@ function Dashboard() {
                                 <input
                                     type="text"
                                     value={district}
-                                    onChange={(e) => setDistrict(e.target.value)}
+                                    onChange={(e) => {setDistrict(e.target.value); setObPoint("")}}
                                     list="district-options"  // <-- Phần này bị thiếu
                                     style={{ width: "100%", padding: "8px", boxSizing: "border-box" }}
                                     placeholder="Nhập tên huyện..."
@@ -335,7 +252,7 @@ function Dashboard() {
                                 <datalist id="district-options">
                                     {filterDistricts
                                     .filter(item => 
-                                        item.pid === IdentifyProvince(province) // Lọc theo tỉnh
+                                        item.pid === IdentifyProvince(province, filterProvinces) // Lọc theo tỉnh
                                     )
                                     .filter(item =>
                                         item.dname.toLowerCase().includes(district.toLowerCase())
@@ -357,7 +274,7 @@ function Dashboard() {
                                 <datalist id="obplace-options">
                                     {filterObPoints
                                     .filter(item => 
-                                        item.wid === IndentifyDistrict(district) // Lọc theo huyện
+                                        item.wid === IndentifyDistrict(district, filterDistricts) // Lọc theo huyện
                                     )
                                     .filter(item =>
                                         item.opname.toLowerCase().includes(Ob_point.toLowerCase())
@@ -367,6 +284,7 @@ function Dashboard() {
                                     ))}
                                 </datalist>
                             </div>
+                            <button onClick={() => setToggle(!toggle)}>Search</button>
                         </div>
                         <div className="chart" style={{ marginTop: "20px", width: "100%", display: "flex", alignItems: "center",justifyContent:"center", flexWrap:"wrap", gap: "40px" }}>
                                 {data && data.length > 0 ? (
@@ -388,7 +306,7 @@ function Dashboard() {
                                     </div>
                                     
                                 ):null}
-                                <div style={{width: "4px", height: "400px", backgroundColor: "#f0f0f0"}}></div>
+                                <div className="dash" style={{width: "4px", height: "400px", backgroundColor: "#f0f0f0"}}></div>
                                 {wqiData && wqiData.length > 0 ? (
                                     <div className="chart-mask">
                                         <div style={{marginRight: "20px"}}>
