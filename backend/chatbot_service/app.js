@@ -76,7 +76,7 @@ app.post("/chat", async (req, res) => {
   }
 });
 
-
+app.post("/insertmsg")
 
 app.listen(PORT, () => {
   console.log(`Server chạy tại http://chatbot-service:${PORT}`);
