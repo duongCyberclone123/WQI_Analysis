@@ -15,7 +15,7 @@ export default function Header() {
                 color: white;
                 display: inline-flex;
                 width: 100%;
-                height: 100px;
+                height: 80px;
                 align-items: center;
                 position: fixed;
                 margin: 0;
@@ -48,7 +48,7 @@ export default function Header() {
             `}
         </style>
         <header className="header">
-            <h1>WATER QUALITY RESEARCHER</h1>
+            <h1>WQR LAB</h1>
             <nav className="navbar">
                 <a href="/home">Home</a>
                 <a href="/dashboard">Dashboard</a>
@@ -66,7 +66,7 @@ export default function Header() {
                     color: white;
                     display: inline-flex;
                     width: 100%;
-                    height: 100px;
+                    height: 80px;
                     align-items: center;
                     position: fixed;
                     top: 0;              /* thêm top: 0 để ghim lên đầu */
@@ -100,7 +100,7 @@ export default function Header() {
                 `}
             </style>
             <header className="header">
-                <h1>WATER QUALITY RESEARCHER</h1>
+                <h1>WQR LAB</h1>
                 <nav className="navbar">
                     <a href="/home">Home</a>
                     <a href="/dashboard">Dashboard</a>
@@ -120,7 +120,7 @@ export default function Header() {
                 color: white;
                 display: inline-flex;
                 width: 100%;
-                height: 100px;
+                height: 80px;
                 align-items: center;
                 position: fixed;
                 top: 0;              /* thêm top: 0 để ghim lên đầu */
@@ -154,13 +154,13 @@ export default function Header() {
             `}
         </style>
         <header className="header">
-            <h1>WATER QUALITY RESEARCHER</h1>
+            <h1 onClick={()=>navigate("/home")} style={{display: "flex", gap: "10px", cursor: "pointer"}}><img src="/assets/plogo.png" style={{width: "30px", height: "30px", marginTop: "-2px"}}/>WQR LAB</h1>
             <nav className="navbar">
                 <a href="/home">Home</a>
                 <a href="/dashboard">Dashboard</a>
                 <a href="/model">AI Model</a>
                 <a href="/report">Report</a>
-                <div>{user.uid}</div>
+                <a href="#" style={{color: "white"}}>Thông tin cá nhân</a>
             </nav>
         </header>
         </>

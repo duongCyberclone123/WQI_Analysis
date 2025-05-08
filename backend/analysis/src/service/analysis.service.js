@@ -1,27 +1,67 @@
 const pool = require("../config/db.js");
 
 class AnalysisService {
-  async nb_of_observation_points() {
-    const rows = await pool.query("SELECT DISTINCT observation_point FROM alldata");
+  async nb_of_observation_points(province, district, ob_place) {
+    const rows = await pool.query(
+      `SELECT DISTINCT observation_point 
+       FROM alldata 
+       WHERE province LIKE ? AND district LIKE ? AND observation_point LIKE ?`,
+      [`%${province || ""}%`, `%${district || ""}%`, `%${ob_place || ""}%`]
+    );
     return rows;
   }
 
-  async nb_of_observations() {
-    const count = await pool.query("SELECT COUNT (*) AS count FROM alldata");
+  async nb_of_observations(province, district, ob_place) {
+    const count = await pool.query(
+      `SELECT COUNT(*) AS count
+       FROM alldata 
+       WHERE province LIKE ? AND district LIKE ? AND observation_point LIKE ?`,
+      [`%${province || ""}%`, `%${district || ""}%`, `%${ob_place || ""}%`]
+    );
     return count;
   }
 
-  async valid_quality() {
-    const count = await pool.query("SELECT COUNT (*) AS count FROM alldata WHERE water_quality > 3");
+  async valid_quality(province, district, ob_place) {
+    const count = await pool.query(
+      `SELECT COUNT(*) AS count
+       FROM alldata 
+       WHERE province LIKE ? AND district LIKE ? AND observation_point LIKE ? AND water_quality > 3`,
+      [`%${province || ""}%`, `%${district || ""}%`, `%${ob_place || ""}%`]
+    );
     return count[0][0].count;
   }
 
-  async water_quality() {
-    const w0 = await pool.query("SELECT COUNT (*) AS count FROM alldata WHERE water_quality = 0");
-    const w1 = await pool.query("SELECT COUNT (*) AS count FROM alldata WHERE water_quality = 1");
-    const w2 = await pool.query("SELECT COUNT (*) AS count FROM alldata WHERE water_quality = 2");
-    const w3 = await pool.query("SELECT COUNT (*) AS count FROM alldata WHERE water_quality = 3");
-    const w4 = await pool.query("SELECT COUNT (*) AS count FROM alldata WHERE water_quality = 4");
+  async water_quality(province, district, ob_place) {
+    const w0 = await pool.query(
+      `SELECT COUNT(*) AS count
+       FROM alldata 
+       WHERE province LIKE ? AND district LIKE ? AND observation_point LIKE ? AND water_quality = 0`,
+      [`%${province || ""}%`, `%${district || ""}%`, `%${ob_place || ""}%`]
+    );
+    const w1 = await pool.query(
+      `SELECT COUNT(*) AS count
+       FROM alldata 
+       WHERE province LIKE ? AND district LIKE ? AND observation_point LIKE ? AND water_quality = 1`,
+      [`%${province || ""}%`, `%${district || ""}%`, `%${ob_place || ""}%`]
+    );
+    const w2 = await pool.query(
+      `SELECT COUNT(*) AS count
+       FROM alldata 
+       WHERE province LIKE ? AND district LIKE ? AND observation_point LIKE ? AND water_quality = 2`,
+      [`%${province || ""}%`, `%${district || ""}%`, `%${ob_place || ""}%`]
+    );
+    const w3 = await pool.query(
+      `SELECT COUNT(*) AS count
+       FROM alldata 
+       WHERE province LIKE ? AND district LIKE ? AND observation_point LIKE ? AND water_quality = 3`,
+      [`%${province || ""}%`, `%${district || ""}%`, `%${ob_place || ""}%`]
+    );
+    const w4 = await pool.query(
+      `SELECT COUNT(*) AS count
+       FROM alldata 
+       WHERE province LIKE ? AND district LIKE ? AND observation_point LIKE ? AND water_quality = 4`,
+      [`%${province || ""}%`, `%${district || ""}%`, `%${ob_place || ""}%`]
+    );
     return [w0[0][0].count, w1[0][0].count, w2[0][0].count, w3[0][0].count, w4[0][0].count];
   }
 
@@ -36,17 +76,17 @@ class AnalysisService {
     let query = "";
     let parameters = [];
     if (province && district && ob_place) {
-      query = `SELECT wqi, date, province, district, observation_point FROM alldata WHERE province = ? AND district = ? AND observation_point = ?`;
+      query = `SELECT wqi, date, province, district, observation_point, coordinate FROM alldata WHERE province = ? AND district = ? AND observation_point = ?`;
       parameters = [province, district, ob_place];
     }
     else if (province && district) {
-      query = `SELECT wqi, date, province, district, observation_point FROM alldata WHERE province = ? AND district = ?`;
+      query = `SELECT wqi, date, province, district, observation_point, coordinate FROM alldata WHERE province = ? AND district = ?`;
       parameters = [province, district];
     } else if (province) {
-      query = `SELECT wqi, date, province, district, observation_point FROM alldata WHERE province = ?`;
+      query = `SELECT wqi, date, province, district, observation_point, coordinate FROM alldata WHERE province = ?`;
       parameters = [province];
     } else {
-      query = `SELECT wqi, date, province, district, observation_point FROM alldata`;
+      query = `SELECT wqi, date, province, district, observation_point, coordinate FROM alldata`;
     }
     const rows = await pool.query(query, parameters);
     return rows[0];
@@ -68,6 +108,26 @@ class AnalysisService {
     await pool.query("INSERT INTO model (place, date, temperature, pH, DO, conduct, alkan, no2, nh4, po4, h2s, tss, cod, aero_total, edward, aero_hydro, coliform, wqi) VALUES (?,?, ?, ?,?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
        [place,date, temperature, pH, DO, conduct, alkan, no2, nh4, po4, h2s, tss, cod, aero_total, edward, aero_hydro, coliform, wqi]);
     return data;
+  }
+
+  async getClusterNumeric(province, district, ob_place) {
+    let query = "";
+    let parameters = [];
+    if (province && district && ob_place) {
+      query = `SELECT * FROM alldata WHERE province = ? AND district = ? AND observation_point = ?`;
+      parameters = [province, district, ob_place];
+    }
+    else if (province && district) {
+      query = `SELECT * FROM alldata WHERE province = ? AND district = ?`;
+      parameters = [province, district];
+    } else if (province) {
+      query = `SELECT * FROM alldata WHERE province = ?`;
+      parameters = [province];
+    } else {
+      query = `SELECT * FROM alldata`;
+    }
+    const rows = await pool.query(query, parameters);
+    return rows[0];
   }
 
 }

@@ -36,7 +36,7 @@ function Verification() {
                         margin: 0;
                         padding: 0;
                         font-family: Arial, sans-serif;
-                        background: linear-gradient(to bottom right, #4CAF50, #2196F3);
+                        background-image: url("/assets/nbg.png");
                         height: 100vh;
                         display: flex;
                         justify-content: center;

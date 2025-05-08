@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Popup.css";
+import "../style/Popup.css";
 
 const AIChatBot = () => {
   const [messages, setMessages] = useState([]);

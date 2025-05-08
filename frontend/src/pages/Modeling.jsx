@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Header from "../components/Header";
+import HeaderRes from "../components/HeaderRes";
 import AIChatbot from "../components/AIChatbot";
+import { useRef } from "react";
+import '../style/model.css'
 
 export default function Modeling() {
 
@@ -19,8 +21,8 @@ export default function Modeling() {
     const [tss, setTSS] = useState("")
     const [cod, setCOD] = useState("")
     const [totalAe, setTotalAe] = useState("")
-    const [edward, setEdward] = useState("")
-    const [aero, setAero] = useState("")
+    const [edward, setEdward] = useState("Positive")
+    const [aero, setAero] = useState("Positive")
     const [coliform, setColiform] = useState("")
     const [wqi, setWqi] = useState(0)
     const [wqr, setWqr] = useState("")
@@ -41,8 +43,8 @@ export default function Modeling() {
             tss: { "location1": tss },
             cod: { "location1": cod },
             aeromonas_total: { "location1": totalAe },
-            edwardsiella_ictaluri: { "location1": edward },
-            aeromonas_hydrophila: { "location1": aero },
+            edwardsiella_ictaluri: { "location1": edward == "Positive" ? 1 : 0 },
+            aeromonas_hydrophila: { "location1": aero == "Positive" ? 1 : 0 },
             coliform: { "location1": coliform },
             water_quality: { "location1": 95 }
         });
@@ -68,7 +70,7 @@ export default function Modeling() {
                     water_quality: { "location1": 95 }
                 },
                 {
-                    headers: {
+                    HeaderResResResRess: {
                         'Content-Type': 'application/json'
                     }
                 }
@@ -92,7 +94,7 @@ export default function Modeling() {
                 coliform: coliform,
                 wqi: res.data.prediction[0],
             }, {
-                headers: {
+                HeaderResResResRess: {
                     'Content-Type': 'application/json'
                 }
             });
@@ -104,12 +106,30 @@ export default function Modeling() {
         }
     };
     
+    const refA = useRef(null);
+    const refB = useRef(null);
+
+    useEffect(() => {
+        if (refA.current && refB.current) {
+        refB.current.style.height = `${refA.current.offsetHeight}px`;
+        }
+    }, []);
 
     return (
         <>
-            <Header />    
-            <h1 style={{fontSize: "40px", marginTop: '150px', fontWeight: "bold", textAlign: "center"}}>WATER QUALITY INDEX PREDICTION</h1>  
+            <HeaderRes />   
+            <style>{`
+                .content{
+                    background-image: url("/assets/nbg.png");
+                }
+            `} 
+            </style>
+            <div className="head-tag">
+                <span></span>
+                <h1><b>WQI PREDICTION</b> <span style={{textAlign: "right", width:"80%"}}><a href="#">Chi tiết</a></span></h1>
+            </div>
             <div style={{marginTop: '30px', display: "flex", flexWWrap: "wrap", gap:"20px" }}>
+            <div className="content">
             <style>
                     {`
                     input[type="date"] {
@@ -167,130 +187,270 @@ export default function Modeling() {
                         outline: none;
                         box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
                     }
+                    select {
+                        padding: 10px 15px;
+                        font-size: 16px;
+                        border: 2px solid #ccc;
+                        border-radius: 8px;
+                        background-color: white;
+                        color: #333;
+                        outline: none;
+                        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+                        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+                    }
+
+                    select:focus {
+                        border-color: #4A90E2;
+                        box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+                    }
+                    `}
+            </style>
+                <div style={{display:"flex", gap: "20px", width: "100%"}} ref={refA}>
+                    <div style={{overflowX: "scroll", scrollbarWidth: 'none',}}>
+                    <div className="chart-mask" style={{ height: "auto", overflowX: "scroll", alignItems: "center", padding: "10px",scrollbarWidth: 'none',}}>
+                        <div style={{
+                            alignItems: "center", marginTop: "20px",
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr 1fr 1fr',
+                            gap: '20px', overflowX:"scroll",
+                            WebkitOverflowScrolling: 'hidden',
+                            scrollbarWidth: 'none',
+                        }}>
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{fontSize: "20px"}}>Place No:</label>
+                                <input type="number" value={placeNo} onChange={(e) => setPlaceNo(e.target.value)} placeholder="Nhập mã vị trí" />
+                            </div>
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{fontSize: "20px"}}>Temperature:</label>
+                                <input type="number" value={temp} onChange={(e) => setTemp(e.target.value)} placeholder="Nhập nhiệt độ" />
+                            </div>
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{fontSize: "20px"}}>pH:</label>
+                                <input type="number" value={pH} onChange={(e) => setpH(e.target.value)} placeholder="Nhập pH" />
+                            </div>
+                            </div>
+                        <div style={{
+                            alignItems: "center", marginTop: "20px",
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr 1fr 1fr',
+                            gap: '20px', overflowX:"scroll",
+                            WebkitOverflowScrolling: 'hidden',
+                            scrollbarWidth: 'none',
+                        }}>
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>DO:</label>
+                                <input
+                                type="number"
+                                value={DO}
+                                onChange={(e) => setDO(e.target.value)}
+                                placeholder="Nhập DO"
+                                />
+                            </div>
+
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>Conductivity:</label>
+                                <input
+                                type="number"
+                                value={con}
+                                onChange={(e) => setCon(e.target.value)}
+                                placeholder="Nhập độ dẫn điện"
+                                />
+                            </div>
+
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>Alkalinity:</label>
+                                <input
+                                type="number"
+                                value={alkan}
+                                onChange={(e) => setAlkan(e.target.value)}
+                                placeholder="Nhập độ kiềm"
+                                />
+                            </div>
+                        </div>
+                        <div style={{
+                            alignItems: "center", marginTop: "20px",
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr 1fr 1fr',
+                            gap: '20px', overflowX:"scroll",
+                            WebkitOverflowScrolling: 'hidden',
+                            scrollbarWidth: 'none',
+                        }}>
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>NO₂:</label>
+                                <input
+                                type="number"
+                                value={no2}
+                                onChange={(e) => setNO2(e.target.value)}
+                                placeholder="Nhập NO2"
+                                />
+                            </div>
+
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>NH₄:</label>
+                                <input
+                                type="number"
+                                value={nh4}
+                                onChange={(e) => setNH4(e.target.value)}
+                                placeholder="Nhập NH4"
+                                />
+                            </div>
+
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>PO₄:</label>
+                                <input
+                                type="number"
+                                value={po4}
+                                onChange={(e) => setPO4(e.target.value)}
+                                placeholder="Nhập PO4"
+                                />
+                            </div>
+                        </div>
+                        <div style={{
+                            alignItems: "center", marginTop: "20px",
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr 1fr 1fr',
+                            gap: '20px', overflowX:"scroll",
+                            WebkitOverflowScrolling: 'hidden',
+                            scrollbarWidth: 'none',
+                        }}>
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>H₂S:</label>
+                                <input
+                                type="number"
+                                value={h2s}
+                                onChange={(e) => setH2S(e.target.value)}
+                                placeholder="Nhập H2S"
+                                />
+                            </div>
+
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>TSS:</label>
+                                <input
+                                type="number"
+                                value={tss}
+                                onChange={(e) => setTSS(e.target.value)}
+                                placeholder="Nhập TSS"
+                                />
+                            </div>
+
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>COD:</label>
+                                <input
+                                type="number"
+                                value={cod}
+                                onChange={(e) => setCOD(e.target.value)}
+                                placeholder="Nhập COD"
+                                />
+                            </div>
+                        </div>
+                        <div style={{
+                            alignItems: "center", marginTop: "20px",
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr 1fr 1fr',
+                            gap: '20px', overflowX:"scroll",
+                            WebkitOverflowScrolling: 'hidden',
+                            scrollbarWidth: 'none',
+                        }}>
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>Aeromonas Total:</label>
+                                <input
+                                type="number"
+                                value={totalAe}
+                                onChange={(e) => setTotalAe(e.target.value)}
+                                placeholder="Nhập Aeromonas Total"
+                                />
+                            </div>
+
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>Edwardsiella Ictaluri:</label>
+                                <select
+                                value={edward}
+                                onChange={(e) => setEdward(e.target.value)}
+                                style={{ fontSize: "16px", padding: "5px" }}
+                                >
+                                <option value="Positive">Positive</option>
+                                <option value="Negative">Negative</option>
+                                </select>
+                            </div>
+
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>Aeromonas Hydrophila:</label>
+                                <select
+                                value={aero}
+                                onChange={(e) => setAero(e.target.value)}
+                                style={{ fontSize: "16px", padding: "5px" }}
+                                >
+                                <option value="Positive">Positive</option>
+                                <option value="Negative">Negative</option>
+                                </select>
+                            </div>
+
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>Coliform:</label>
+                                <input
+                                type="number"
+                                value={coliform}
+                                onChange={(e) => setColiform(e.target.value)}
+                                placeholder="Nhập Coliform"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div style={{width: "4px", height: "140px", backgroundColor: "#ccc"}} ref={refB}></div>
+                    <div style={{height: "140px"}}>
+                        <table style={{borderCollapse: 'collapse' }}>
+                            <thead>
+                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Model</th>
+                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Water Quality Index</th>
+                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Water Quality Rate</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px", color:"#fff"}}>
+                                        XGBoost
+                                    </td>
+                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px", color:"#fff"}}>
+                                        {wqi}
+                                    </td>
+                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px", color:"#fff"}}>
+                                        {wqr}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <style>
+                    {`
+                        .btn {
+                            display: flex;               
+                            align-items: center;        
+                            justify-content: center;     
+                            width: 160px;
+                            height: 40px;
+                            border: 2px solid #040403;
+                            border-radius: 10px;
+                            background-color: #C0C0C0;
+                            color: #040403;
+                            font-size: 18px;
+                            font-weight: bold;
+                            margin-top: 30px;
+                        }
+                        .btn:hover {
+                            background-color: #40AAB9;
+                            color: #F2E394;
+                            cursor: pointer;
+                        }
                     `}
                 </style>
-                <div style={{width: "100%", height: "140px", overflowX: "scroll"}}>
-                    <table style={{borderCollapse: 'collapse' }}>
-                        <thead>
-                            <tr>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Place No.</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Temperature</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>pH</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Disolved Oxygen</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Conductivity</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Alkanity</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>NO2</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>PO4</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>NH4</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>H2S</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Total suspended solids</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Chemical Oxygen Demand</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Total Aeromonas</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Edwardsiella ictaluri</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Aeromonas hydrophila</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Coliform</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={placeNo} onChange={(e) => setPlaceNo(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={temp} onChange={(e) => setTemp(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={pH} onChange={(e) => setpH(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={DO} onChange={(e) => setDO(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={con} onChange={(e) => setCon(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={alkan} onChange={(e) => setAlkan(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={no2} onChange={(e) => setNO2(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={po4} onChange={(e) => setPO4(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={nh4} onChange={(e) => setNH4(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={h2s} onChange={(e) => setH2S(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={tss} onChange={(e) => setTSS(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={cod} onChange={(e) => setCOD(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={totalAe} onChange={(e) => setTotalAe(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={edward} onChange={(e) => setEdward(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={aero} onChange={(e) => setAero(e.target.value)}/>
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>
-                                    <input type="number" value={coliform} onChange={(e) => setColiform(e.target.value)}/>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div></div>
                 </div>
-                <div style={{width: "4px", height: "140px", backgroundColor: "#000"}}></div>
-                <div style={{height: "140px"}}>
-                    <table style={{borderCollapse: 'collapse' }}>
-                        <thead>
-                            <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Water Quality Index</th>
-                            <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Water Quality Rate</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px"}}>
-                                    {wqi}
-                                </td>
-                                <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px"}}>
-                                    {wqr}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <style>
-                {`
-                    .btn {
-                        display: flex;               
-                        align-items: center;        
-                        justify-content: center;     
-                        width: 160px;
-                        height: 40px;
-                        border: 2px solid #040403;
-                        border-radius: 10px;
-                        background-color: #C0C0C0;
-                        color: #040403;
-                        font-size: 18px;
-                        font-weight: bold;
-                        margin-top: 30px;
-                    }
-                    .btn:hover {
-                        background-color: #40AAB9;
-                        color: #F2E394;
-                        cursor: pointer;
-                    }
-                `}
-            </style>
+
             <div className="btn" onClick={() => handlePrediction()}>Generating Model</div>
             <AIChatbot />
+            </div>
+            </div>
+            
         </>
     );
 }

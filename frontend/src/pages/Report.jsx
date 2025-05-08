@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Header from "../components/Header";
+import HeaderRes from "../components/HeaderRes";
 
 export default function Report() {
     const rows = 10;
@@ -20,12 +20,12 @@ export default function Report() {
             try {
                 const res = await axios.get("http://localhost:3002/analysis/fetch",{
                     params: {
-                        limit: limitRecord,
-                        ub: ub,
-                        lb: lb,
-                        startDate: startDate,
-                        endDate: endDate,
-                        offset: startIdx
+                        limit: limitRecord || 10,
+                        ub: ub || 100,
+                        lb: lb || 0,
+                        startDate: startDate || "2022/01/01",
+                        endDate: endDate || "2025/01/01",
+                        offset: startIdx || 0
                     }
                 })
                 setDataset(res.data.data)
@@ -86,7 +86,7 @@ export default function Report() {
 
     return (
         <>
-            <Header />
+            <HeaderRes />
             <div className="filter" style={{marginTop: "150px"}}>
                 <style>
                     {`
@@ -222,7 +222,7 @@ export default function Report() {
                         <tbody>
                             {dataset.map((item, id) => (
                                 <tr key={id}>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{id+ startIdx + 1}</td>
+                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{id + Number(startIdx) + 1}</td>
                                     <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.province}</td>
                                     <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.district}</td>
                                     <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.observation_point}</td>
@@ -328,7 +328,7 @@ export default function Report() {
                     `}
                 </style>
 
-                <select value={limitRecord} onChange={(e) => setLimitRecord(e.target.value)}>
+                <select value={limitRecord} onChange={(e) => {setLimitRecord(e.target.value); setStartIdx(0);}}>
                     {lstLimitRecord.map((item, id) => (
                     <option key={id} value={item}>{item}</option>
                     ))}
@@ -336,13 +336,13 @@ export default function Report() {
 
                 <button
                     className="nav-button"
-                    onClick={() => setStartIdx(startIdx - limitRecord <= 0 ? startIdx : startIdx - limitRecord)}
+                    onClick={() => setStartIdx(Number(startIdx) - Number(limitRecord) <= 0 ? Number(startIdx) : Number(startIdx) - Number(limitRecord))}
                 >
                     Prev
                 </button>
                 <button
                     className="nav-button"
-                    onClick={() => setStartIdx(startIdx + limitRecord >= 1612 ? startIdx : startIdx + limitRecord)}
+                    onClick={() => {setStartIdx(Number(startIdx) + Number(limitRecord) >= 1612 ? Number(startIdx) : Number(startIdx) + Number(limitRecord)); console.log(startIdx)}}
                 >
                     Next
                 </button>

@@ -1,9 +1,15 @@
-import {PieChart, Pie, Cell, LineChart, Line,BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
+import {
+  PieChart, Pie, Cell, 
+  LineChart, Line,
+  BarChart, Bar, 
+  XAxis, YAxis, CartesianGrid, 
+  Tooltip, Legend, ResponsiveContainer
+} from 'recharts';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042','#FF00FF'];
 
-export function MeasurementLineChart({ data }) {
-    console.log("Line chart data: ", data);
+export function MeasurementLineChart({ data, feature }) {
+    //console.log("Line chart data: ", data);
     return (
         <ResponsiveContainer width={400} height={400}> {/* 👈 thêm height vào đây */}
             <LineChart data={data}>
@@ -19,7 +25,7 @@ export function MeasurementLineChart({ data }) {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey="avgWqi" stroke="#8884d8" name="WQI trung bình" />
+                <Line type="monotone" dataKey="avgWqi" stroke="#8884d8" name={feature} />
             </LineChart>
         </ResponsiveContainer>
     );
@@ -79,3 +85,22 @@ export function DonutChart({ data }) {
       </PieChart>
     );
   }
+
+export function MyBarChart({data}){
+    return (
+      <ResponsiveContainer width="100%" height={400}>
+        <BarChart
+          data={data}
+          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="label" />
+          <YAxis allowDecimals={false} />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="pos" fill="#4CAF50" name="Dương tính" />
+          <Bar dataKey="neg" fill="#F44336" name="Âm tính" />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+  };
