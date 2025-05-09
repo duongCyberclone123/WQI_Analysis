@@ -16,5 +16,7 @@ const analysisRoutes = require("./routes/analysis.route");
 app.use("/analysis", analysisRoutes);
 const userRoutes = require("./routes/users.route");
 app.use("/users", userRoutes);
+const reportRoutes = require("./routes/report.route")
+app.use("/report", reportRoutes)
 
 module.exports = app;

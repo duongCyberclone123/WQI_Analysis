@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import HeaderRes from "../components/HeaderRes";
 
 export default function Report() {
-    const rows = 10;
-    const columns = 24;
     const [limitRecord, setLimitRecord] = useState(10);
     const lstLimitRecord = [10, 20, 50, 100];
     const [dataset, setDataset] = useState([]);
@@ -42,47 +39,60 @@ export default function Report() {
         return date.toLocaleDateString('en-GB', options);
     }
 
-    function downloadExcel() {
-        fetch('http://localhost:3002/analysis/export/excel')
-          .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok');
-            return response.blob();
-          })
-          .then(blob => {
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'wqi_data.xlsx'; // tên file tải về
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            window.URL.revokeObjectURL(url);
-          })
-          .catch(error => {
-            console.error('Download error:', error);
-          });
-    }
+    async function downloadExcel() {
+        try {
+            const res = await axios.post(
+                'http://localhost:3002/report/generate-excel',
+                {}, // nếu gửi body rỗng
+                {
+                    params: {
+                        startDate: startDate || '01/01/2022',
+                        endDate: endDate || '01/01/2026'
+                    },
+                    responseType: 'blob'
+                }
+            );
+    
+            const url = window.URL.createObjectURL(new Blob([res.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'bao_cao_chat_luong_nuoc.xlsx');
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+        } catch (error) {
+            console.log(error);
+            alert("Không thể tải Excel: " + error.message);
+        }
+    }    
 
-    function downloadPDF() {
-        fetch('http://localhost:3002/analysis/export/pdf')
-          .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok');
-            return response.blob();
-          })
-          .then(blob => {
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'wqi_data.pdf'; // tên file tải về
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            window.URL.revokeObjectURL(url);
-          })
-          .catch(error => {
-            console.error('Download error:', error);
-          });
+    async function downloadPDF() {
+        try {
+            const res = await axios.post(
+                'http://localhost:3002/report/generate-pdf',
+                {},
+                {
+                    params: {
+                        startDate: startDate || '01/01/2022',
+                        endDate: endDate || '01/01/2026'
+                    },
+                    responseType: 'blob'
+                }
+            );
+    
+            const url = window.URL.createObjectURL(new Blob([res.data], { type: 'application/pdf' }));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'bao_cao_chat_luong_nuoc.pdf');
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+        } catch (error) {
+            console.log(error);
+            alert("Không thể tải PDF: " + error.message);
+        }
     }
+    
 
     return (
         <>

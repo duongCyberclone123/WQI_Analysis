@@ -87,6 +87,7 @@ export function DonutChart({ data }) {
   }
 
 export function MyBarChart({data}){
+  console.log(data)
     return (
       <ResponsiveContainer width="100%" height={400}>
         <BarChart
@@ -94,7 +95,12 @@ export function MyBarChart({data}){
           margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="label" />
+          <XAxis dataKey="label" 
+          tickFormatter={(label, index) => {
+              const [year, month] = label.split('-');
+              // Chỉ hiển thị năm nếu là tháng 12 hoặc là điểm cuối cùng trong năm
+              return month === '12' ? year : '';
+          }}/>
           <YAxis allowDecimals={false} />
           <Tooltip />
           <Legend />

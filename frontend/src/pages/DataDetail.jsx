@@ -3,7 +3,7 @@ import axios from "axios";
 import HeaderRes from "../components/HeaderRes";
 import { useState, useEffect } from "react";
 import AIChatbot from "../components/AIChatbot";  
-import { MeasurementLineChart } from "../components/Chart";
+import { MeasurementLineChart, MyBarChart } from "../components/Chart";
 import '../style/dashboard.css'
 import { ClusterByBinaryFeature, ClusterByNumbericFeature } from "../utils/clusterData";
 import {IndentifyDistrict, IdentifyProvince} from '../utils/identifyPlace'
@@ -164,7 +164,7 @@ function Detail() {
                         <div className="chart" style={{ marginTop: "20px", width: "100%", display: "flex", alignItems: "center",justifyContent:"center", flexWrap:"wrap", gap: "40px" }}>
                                 {wqiData && wqiData.length > 0 && col != "" ? (
                                     <>
-                                    <div className="chart-mask" style={{padding:"15px", alignItems:"center", justifyItems: "center", display:"flex", gap:"20px", flexWrap: "wrap"}}>
+                                    <div className="chart-mask" style={{padding:"15px", alignItems:"center", justifyItems: "center", display:"flex", gap:"20px", flexWrap: "wrap", width: "588px"}}>
                                         <div className="inner-mask">
                                             <h3>Giá trị cao nhất</h3>
                                             <div style={{alignItems: "center"}}>
@@ -204,14 +204,29 @@ function Detail() {
                                     </div>
                                     <div className="chart-mask">
                                         <h2 style={{ textAlign: "center" }}>Thống kê chỉ số {col}</h2>
-                                        <div style={{marginRight: "20px"}}>
-                                            <MeasurementLineChart 
-                                                data={(col == "edwardsiella ilacturi" || col == "aeromonas hydrophila") ? 
-                                                ClusterByBinaryFeature(col, wqiData) : 
-                                                ClusterByNumbericFeature(col, wqiData)} 
-                                                feature={col + (dv[lstCol.indexOf(col)] === "" ? "" :(" (" + dv[lstCol.indexOf(col)] +")"))}
-                                            />
-                                        </div>
+                                        {
+                                            (col == "edwardsiella_ictaluri" || col == 'aeromonas_hydrophila')? 
+                                            (
+                                                null
+                                            ):
+                                            (
+                                                <div style={{marginRight: "20px"}}>
+                                                <MeasurementLineChart 
+                                                    data={ClusterByNumbericFeature(col, wqiData)} 
+                                                    feature={col + (dv[lstCol.indexOf(col)] === "" ? "" :(" (" + dv[lstCol.indexOf(col)] +")"))}
+                                                />
+                                                </div>
+                                            )
+                                        }   
+                                        {
+                                            (col == "edwardsiella_ictaluri" || col == 'aeromonas_hydrophila')? 
+                                            (
+                                                <MyBarChart
+                                                    data={ClusterByBinaryFeature(col, wqiData)} 
+                                                    feature={col + (dv[lstCol.indexOf(col)] === "" ? "" :(" (" + dv[lstCol.indexOf(col)] +")"))}
+                                                />
+                                            ):null
+                                        }     
                                     </div>
                                     </>
                                 ):null}

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import HeaderRes from "../components/HeaderRes";
 import AIChatbot from "../components/AIChatbot";
 import { useRef } from "react";
 import '../style/model.css'
+import { lstCol, dv } from "../utils/dataFeatures";
 
 export default function Modeling() {
 
@@ -25,8 +25,6 @@ export default function Modeling() {
     const [aero, setAero] = useState("Positive")
     const [coliform, setColiform] = useState("")
     const [wqi, setWqi] = useState(0)
-    const [wqr, setWqr] = useState("")
-    const [show, setShow] = useState(false);
 
     const handlePrediction = async () => {
         console.log("JSON data: ", {
@@ -45,29 +43,27 @@ export default function Modeling() {
             aeromonas_total: { "location1": totalAe },
             edwardsiella_ictaluri: { "location1": edward == "Positive" ? 1 : 0 },
             aeromonas_hydrophila: { "location1": aero == "Positive" ? 1 : 0 },
-            coliform: { "location1": coliform },
-            water_quality: { "location1": 95 }
+            coliform: { "location1": coliform }
         });
         try {
             const res = await axios.post("http://localhost:8000/test",
                 {
-                    place: { "location1": placeNo },
-                    temperature: { "location1": temp },
-                    pH: { "location1": pH },
-                    DO: { "location1": DO },
-                    conductivity: { "location1": con },
-                    alkalinity: { "location1": alkan },
-                    no2: { "location1": no2 },
-                    nh4: { "location1": nh4 },
-                    po4: { "location1": po4 },
-                    h2s: { "location1": h2s },
-                    tss: { "location1": tss },
-                    cod: { "location1": cod },
-                    aeromonas_total: { "location1": totalAe },
-                    edwardsiella_ictaluri: { "location1": edward },
-                    aeromonas_hydrophila: { "location1": aero },
-                    coliform: { "location1": coliform },
-                    water_quality: { "location1": 95 }
+                    place: { "location1": Number(placeNo) },
+                    temperature: { "location1": Number(temp) },
+                    pH: { "location1": Number(pH) },
+                    DO: { "location1": Number(DO) },
+                    conductivity: { "location1": Number(con) },
+                    alkalinity: { "location1": Number(alkan) },
+                    no2: { "location1": Number(no2) },
+                    nh4: { "location1": Number(nh4) },
+                    po4: { "location1": Number(po4) },
+                    h2s: { "location1": Number(h2s) },
+                    tss: { "location1": Number(tss) },
+                    cod: { "location1": Number(cod) },
+                    aeromonas_total: { "location1": Number(totalAe) },
+                    edwardsiella_ictaluri: { "location1": Number(edward == "Positive" ? 1 : 0) },
+                    aeromonas_hydrophila: { "location1": Number(aero == "Positive" ? 1 : 0) },
+                    coliform: { "location1": Number(coliform) }
                 },
                 {
                     HeaderResResResRess: {
@@ -89,8 +85,8 @@ export default function Modeling() {
                 tss: tss,
                 cod: cod,
                 aero_total: totalAe,
-                edward: edward,
-                aero_hydro: aero,
+                edward: edward == "Positive" ? 1 : 0,
+                aero_hydro: aero == "Positive" ? 1 : 0,
                 coliform: coliform,
                 wqi: res.data.prediction[0],
             }, {
@@ -205,7 +201,7 @@ export default function Modeling() {
                     }
                     `}
             </style>
-                <div style={{display:"flex", gap: "20px", width: "100%"}} ref={refA}>
+                <div style={{display:"flex", gap: "20px", width: "100%", alignItems:"center"}} ref={refA}>
                     <div style={{overflowX: "scroll", scrollbarWidth: 'none',}}>
                     <div className="chart-mask" style={{ height: "auto", overflowX: "scroll", alignItems: "center", padding: "10px",scrollbarWidth: 'none',}}>
                         <div style={{
@@ -223,10 +219,21 @@ export default function Modeling() {
                             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
                                 <label style={{fontSize: "20px"}}>Temperature:</label>
                                 <input type="number" value={temp} onChange={(e) => setTemp(e.target.value)} placeholder="Nhập nhiệt độ" />
+                                <span>({dv[lstCol.indexOf("temperature")]})</span>
                             </div>
                             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
                                 <label style={{fontSize: "20px"}}>pH:</label>
                                 <input type="number" value={pH} onChange={(e) => setpH(e.target.value)} placeholder="Nhập pH" />
+                            </div>
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>Coliform:</label>
+                                <input
+                                type="number"
+                                value={coliform}
+                                onChange={(e) => setColiform(e.target.value)}
+                                placeholder="Nhập Coliform"
+                                />
+                                <span>({dv[lstCol.indexOf("coliform")]})</span>
                             </div>
                             </div>
                         <div style={{
@@ -245,6 +252,7 @@ export default function Modeling() {
                                 onChange={(e) => setDO(e.target.value)}
                                 placeholder="Nhập DO"
                                 />
+                                <span>({dv[lstCol.indexOf("DO")]})</span>
                             </div>
 
                             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
@@ -255,6 +263,7 @@ export default function Modeling() {
                                 onChange={(e) => setCon(e.target.value)}
                                 placeholder="Nhập độ dẫn điện"
                                 />
+                                <span>({dv[lstCol.indexOf("conductivity")]})</span>
                             </div>
 
                             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
@@ -265,6 +274,19 @@ export default function Modeling() {
                                 onChange={(e) => setAlkan(e.target.value)}
                                 placeholder="Nhập độ kiềm"
                                 />
+                                <span>({dv[lstCol.indexOf("alkalinity")]})</span>
+                            </div>
+
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>Aeromonas Hydrophila:</label>
+                                <select
+                                value={aero}
+                                onChange={(e) => setAero(e.target.value)}
+                                style={{ fontSize: "16px", padding: "5px" }}
+                                >
+                                <option value="Positive">Positive</option>
+                                <option value="Negative">Negative</option>
+                                </select>
                             </div>
                         </div>
                         <div style={{
@@ -283,6 +305,7 @@ export default function Modeling() {
                                 onChange={(e) => setNO2(e.target.value)}
                                 placeholder="Nhập NO2"
                                 />
+                                <span>({dv[lstCol.indexOf("no2")]})</span>
                             </div>
 
                             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
@@ -293,6 +316,7 @@ export default function Modeling() {
                                 onChange={(e) => setNH4(e.target.value)}
                                 placeholder="Nhập NH4"
                                 />
+                                <span>({dv[lstCol.indexOf("nh4")]})</span>
                             </div>
 
                             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
@@ -303,6 +327,19 @@ export default function Modeling() {
                                 onChange={(e) => setPO4(e.target.value)}
                                 placeholder="Nhập PO4"
                                 />
+                                <span>({dv[lstCol.indexOf("po4")]})</span>
+                            </div>
+
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <label style={{ fontSize: "20px" }}>Edwardsiella Ictaluri:</label>
+                                <select
+                                value={edward}
+                                onChange={(e) => setEdward(e.target.value)}
+                                style={{ fontSize: "16px", padding: "5px" }}
+                                >
+                                <option value="Positive">Positive</option>
+                                <option value="Negative">Negative</option>
+                                </select>
                             </div>
                         </div>
                         <div style={{
@@ -321,6 +358,7 @@ export default function Modeling() {
                                 onChange={(e) => setH2S(e.target.value)}
                                 placeholder="Nhập H2S"
                                 />
+                                <span>({dv[lstCol.indexOf("h2s")]})</span>
                             </div>
 
                             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
@@ -331,6 +369,7 @@ export default function Modeling() {
                                 onChange={(e) => setTSS(e.target.value)}
                                 placeholder="Nhập TSS"
                                 />
+                                <span>({dv[lstCol.indexOf("tss")]})</span>
                             </div>
 
                             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
@@ -341,16 +380,9 @@ export default function Modeling() {
                                 onChange={(e) => setCOD(e.target.value)}
                                 placeholder="Nhập COD"
                                 />
+                                <span>({dv[lstCol.indexOf("cod")]})</span>
                             </div>
-                        </div>
-                        <div style={{
-                            alignItems: "center", marginTop: "20px",
-                            display: 'grid',
-                            gridTemplateColumns: '1fr 1fr 1fr 1fr',
-                            gap: '20px', overflowX:"scroll",
-                            WebkitOverflowScrolling: 'hidden',
-                            scrollbarWidth: 'none',
-                        }}>
+
                             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
                                 <label style={{ fontSize: "20px" }}>Aeromonas Total:</label>
                                 <input
@@ -359,40 +391,7 @@ export default function Modeling() {
                                 onChange={(e) => setTotalAe(e.target.value)}
                                 placeholder="Nhập Aeromonas Total"
                                 />
-                            </div>
-
-                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                                <label style={{ fontSize: "20px" }}>Edwardsiella Ictaluri:</label>
-                                <select
-                                value={edward}
-                                onChange={(e) => setEdward(e.target.value)}
-                                style={{ fontSize: "16px", padding: "5px" }}
-                                >
-                                <option value="Positive">Positive</option>
-                                <option value="Negative">Negative</option>
-                                </select>
-                            </div>
-
-                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                                <label style={{ fontSize: "20px" }}>Aeromonas Hydrophila:</label>
-                                <select
-                                value={aero}
-                                onChange={(e) => setAero(e.target.value)}
-                                style={{ fontSize: "16px", padding: "5px" }}
-                                >
-                                <option value="Positive">Positive</option>
-                                <option value="Negative">Negative</option>
-                                </select>
-                            </div>
-
-                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                                <label style={{ fontSize: "20px" }}>Coliform:</label>
-                                <input
-                                type="number"
-                                value={coliform}
-                                onChange={(e) => setColiform(e.target.value)}
-                                placeholder="Nhập Coliform"
-                                />
+                                <span>({dv[lstCol.indexOf("aeromonas_total")]})</span>
                             </div>
                         </div>
                     </div>
@@ -415,7 +414,7 @@ export default function Modeling() {
                                         {wqi}
                                     </td>
                                     <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px", color:"#fff"}}>
-                                        {wqr}
+                                        {wqi < 10 ? "Rất tệ" : (wqi < 20 ? "Tệ" : (wqi < 50 ? "Trung bình": (wqi <70? "Khá tốt" : (wqi <90 ? "Tốt" : "Rất tốt"))))}
                                     </td>
                                 </tr>
                             </tbody>

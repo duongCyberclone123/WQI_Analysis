@@ -7,6 +7,7 @@ import Register from './pages/Register';
 import Verification from './pages/Verification';
 import Report from './pages/Report';
 import Modeling from './pages/Modeling'
+import ChangePassword from './pages/User';
 // Admin imports
 import AdminHome from './admin/AdminHome';
 import UserManagement from './admin/UserManagement';
@@ -26,6 +27,7 @@ function App() {
             <Route path="/report" element={<Report />} /> 
             <Route path="/model" element={<Modeling />} />
             <Route path='/detail' element={<Detail />} />
+            <Route path='/pass' element={<ChangePassword />}/>
             {/* Admin routes */}
             <Route path="/admin" element={<AdminHome />} /> 
             <Route path="/admin/user-management" element={<UserManagement />} />

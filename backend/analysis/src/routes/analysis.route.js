@@ -19,69 +19,6 @@ require('pdfkit-table'); // Thêm table method vào PDFDocument prototype
 const path = require('path');
 const { PassThrough } = require('stream');
 
-router.get('/export/pdf', async (req, res) => {
-  try {
-    const [rows] = await pool.query("SELECT * FROM alldata");
-
-    console.log('Số dòng:', rows.length);
-    if (!rows.length) throw new Error('Không có dữ liệu để xuất PDF');
-
-    const doc = new PDFDocument({ margin: 30, size: 'A4' });
-    doc.registerFont('Roboto', path.join(__dirname, 'Roboto-Regular.ttf'));
-    doc.font('Roboto');
-
-    // Tạo timestamp để đặt tên file lưu
-    const now = new Date();
-    const timestamp = now.toISOString().replace(/[-:T]/g, '').slice(0, 15); // YYYYMMDDHHMMSS
-    const filename = `data_export_${timestamp}.pdf`;
-    const filePath = path.join(__dirname, 'exports', filename);
-
-    // Tạo thư mục nếu chưa tồn tại
-    fs.mkdirSync(path.dirname(filePath), { recursive: true });
-
-    // Tạo PassThrough để ghi ra 2 nơi: response và file
-    const pass = new PassThrough();
-    const fileStream = fs.createWriteStream(filePath);
-    doc.pipe(pass);
-    pass.pipe(res);        // Gửi về client
-    pass.pipe(fileStream); // Ghi vào file
-
-    // Header xuất PDF
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
-
-    doc.fontSize(18).text('BÁO CÁO DỮ LIỆU QUAN TRẮC', { align: 'center' }).moveDown();
-
-    const rowsPerPage = 10;
-    const totalPages = Math.ceil(rows.length / rowsPerPage);
-
-    for (let page = 0; page < totalPages; page++) {
-      if (page > 0) doc.addPage();
-
-      const start = page * rowsPerPage;
-      const currentRows = rows.slice(start, start + rowsPerPage);
-
-      const headers = Object.keys(currentRows[0] || {});
-      const body = currentRows.map(row =>
-        headers.map(key => row[key]?.toString() || '')
-      );
-
-      doc.table({
-        title: `Dữ liệu trang ${page + 1}`,
-        headers,
-        rows: body
-      });
-    }
-
-    doc.end();
-  } catch (err) {
-    console.error('PDF Export Error:', err);
-    if (!res.headersSent) {
-      res.status(500).send('Export failed');
-    }
-  }
-});
-
 router.get('/export/excel', async (req, res) => {
     try {
       const [rows] = await pool.query("SELECT * FROM alldata");

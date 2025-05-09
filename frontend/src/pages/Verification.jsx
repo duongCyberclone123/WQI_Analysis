@@ -1,12 +1,11 @@
-import { useEffect, useState  } from "react";
+import { useState  } from "react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 function Verification() {
         const location = useLocation();
-        const [email, setEmail] = useState(location.state.email);
+        const email = location.state.email;
         const [code, setCode] = useState("");
         const navigate = useNavigate();
         const onSubmit = async(e) => {
