@@ -3,10 +3,10 @@ const Observation = require('../models/observation');
 const ObservePlace = require('../models/observePlace');
 
 // Hàm lấy dữ liệu báo cáo từ bảng observation
-async function generateReportData(startDate, endDate, location) {
+async function generateReportData(startDate, endDate, opid) {
   // Kiểm tra các tham số đầu vào cơ bản
-  if (!startDate || !endDate || !location) {
-    throw new Error('Missing parameters startDate, endDate or location');
+  if (!startDate || !endDate || !opid) {
+    throw new Error('Missing parameters startDate, endDate or opid');
   }
 
   // Thực hiện truy vấn
@@ -15,7 +15,7 @@ async function generateReportData(startDate, endDate, location) {
       date: {
         [Op.between]: [startDate, endDate]
       },
-      opid: location // Điều chỉnh nếu location cần ánh xạ tới observation_place
+      opid: opid
     }
   });
 
@@ -23,9 +23,9 @@ async function generateReportData(startDate, endDate, location) {
 }
 
 // Hàm xuất báo cáo PDF
-async function generatePdfReportService(startDate, endDate, location) {
+async function generatePdfReportService(startDate, endDate, opid) {
   // Lấy dữ liệu
-  const data = await generateReportData(startDate, endDate, location);
+  const data = await generateReportData(startDate, endDate, opid);
 
   // Chuyển dữ liệu sang định dạng cho PDFGenerator
   const formatted = data.map(item => ({
@@ -59,9 +59,9 @@ async function generatePdfReportService(startDate, endDate, location) {
 }
 
 // Hàm xuất báo cáo Excel
-async function generateExcelReportService(startDate, endDate, location) {
-  // Lấy dữ liệu từ bảng Observation với các tham số startDate, endDate, location
-  const data = await generateReportData(startDate, endDate, location);
+async function generateExcelReportService(startDate, endDate, opid) {
+  // Lấy dữ liệu từ bảng Observation với các tham số startDate, endDate, opid
+  const data = await generateReportData(startDate, endDate, opid);
 
   // Định dạng dữ liệu để xuất ra Excel, mỗi item chứa các thông số cần thiết
   const formatted = data.map(item => ({

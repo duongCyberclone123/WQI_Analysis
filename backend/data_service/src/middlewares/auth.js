@@ -1,5 +1,5 @@
 require("dotenv").config();
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 /**
  * Middleware xác thực JWT và phân quyền.
@@ -21,19 +21,32 @@ function auth(allowedRoles = []) {
     const token = parts[1];
 
     try {
+      // Giải mã token
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      req.user = decoded; // Gán thông tin user đã giải mã cho request
+
+      // Gán thông tin user đã giải mã cho request
+      req.user = decoded;
+
+      // Kiểm tra role tồn tại trong token
+      if (!decoded.role) {
+        return res.status(403).json({ message: "Token không chứa thông tin quyền truy cập" });
+      }
 
       // Kiểm tra quyền truy cập
-      if (!allowedRoles.includes(decoded.role)) {
+      if (allowedRoles.length && !allowedRoles.includes(decoded.role)) {
         return res.status(403).json({ message: "Không đủ quyền truy cập" });
       }
 
       next(); // Nếu hợp lệ, cho phép tiếp tục
     } catch (err) {
-      return res.status(401).json({ message: "Token không hợp lệ hoặc đã hết hạn" });
+      // Thông báo chi tiết hơn khi lỗi
+      if (err.name === "TokenExpiredError") {
+        return res.status(401).json({ message: "Token đã hết hạn" });
+      }
+      return res.status(401).json({ message: "Token không hợp lệ hoặc đã hết hạn", details: err.message });
     }
   };
 }
 
 module.exports = auth;
+

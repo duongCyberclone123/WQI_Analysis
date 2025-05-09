@@ -80,3 +80,25 @@ exports.login = async (req, res) => {
   );
   res.json({ token });
 };
+
+exports.changePassword = async (req, res) => {
+  const { email, oldPassword, newPassword } = req.body;
+
+  try {
+    const [rows] = await pool.query("SELECT * FROM users WHERE email = ?", [email]);
+    if (!rows.length) return res.status(400).json({ message: "Tài khoản không tồn tại" });
+
+    const user = rows[0];
+
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isMatch) return res.status(400).json({ message: "Mật khẩu cũ không đúng" });
+
+    const hashedNewPassword = await bcrypt.hash(newPassword, 10);
+
+    await pool.query("UPDATE users SET password = ? WHERE email = ?", [hashedNewPassword, email]);
+
+    res.json({ message: "Đổi mật khẩu thành công" });
+  } catch (err) {
+    res.status(500).json({ message: "Lỗi máy chủ", error: err.message });
+  }
+};

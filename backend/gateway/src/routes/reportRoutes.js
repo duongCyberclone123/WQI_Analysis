@@ -6,12 +6,12 @@ const axios = require('axios'); // Dùng axios để gọi các service khác
 
 // API để xuất báo cáo PDF
 router.post('/generate-pdf', auth(['user', 'admin']), async (req, res) => {
-  const { startDate, endDate, location } = req.body;
+  const { startDate, endDate, opid } = req.body;
 
   try {
     const response = await axios.post(
       'http://localhost:3002/generate-pdf',
-      { startDate, endDate, location }
+      { startDate, endDate, opid }
     );
     res.send(response.data);
   } catch (error) {
@@ -21,12 +21,12 @@ router.post('/generate-pdf', auth(['user', 'admin']), async (req, res) => {
 
 // API để xuất báo cáo Excel
 router.post('/generate-excel', auth(['user', 'admin']), async (req, res) => {
-  const { startDate, endDate, location } = req.body;
+  const { startDate, endDate, opid } = req.body;
 
   try {
     const response = await axios.post(
       'http://localhost:3002/generate-excel',
-      { startDate, endDate, location }
+      { startDate, endDate, opid }
     );
     res.send(response.data);
   } catch (error) {

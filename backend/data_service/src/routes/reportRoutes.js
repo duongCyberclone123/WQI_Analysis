@@ -5,14 +5,14 @@ const { generatePdfReportService, generateExcelReportService } = require('../ser
 
 // Chỉ người dùng đã đăng nhập mới có thể xuất báo cáo
 router.post('/generate-pdf', auth(['user', 'admin']), async (req, res) => {
-  const { startDate, endDate, location } = req.body;
+  const { startDate, endDate, opid } = req.body;
 
-  if (!startDate || !endDate || !location) {
-    return res.status(400).json({ error: 'Thiếu thông tin yêu cầu: startDate, endDate, location' });
+  if (!startDate || !endDate || !opid) {
+    return res.status(400).json({ error: 'Thiếu thông tin yêu cầu: startDate, endDate, opid' });
   }
 
   try {
-    const filePath = await generatePdfReportService(startDate, endDate, location);
+    const filePath = await generatePdfReportService(startDate, endDate, opid);
 
     // Thiết lập header để tải file về
     res.download(filePath, 'bao_cao_chat_luong_nuoc.pdf', (err) => {
@@ -28,19 +28,19 @@ router.post('/generate-pdf', auth(['user', 'admin']), async (req, res) => {
 });
 
 router.post('/generate-excel', auth(['user', 'admin']), async (req, res) => {
-  const { startDate, endDate, location } = req.body;
+  const { startDate, endDate, opid } = req.body;
 
   // Kiểm tra tham số đầu vào
-  if (!startDate || !endDate || !location) {
+  if (!startDate || !endDate || !opid) {
     return res.status(400).json({
       error: 'Thiếu tham số',
-      details: 'Cần cung cấp startDate, endDate và location',
+      details: 'Cần cung cấp startDate, endDate và opid',
     });
   }
 
   try {
     // Gọi hàm tạo báo cáo Excel
-    const filePath = await generateExcelReportService(startDate, endDate, location);
+    const filePath = await generateExcelReportService(startDate, endDate, opid);
 
     // Trả về file Excel với tên file có thể thay đổi
     res.download(filePath, 'water_quality_report.xlsx', (err) => {

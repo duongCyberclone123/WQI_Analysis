@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
+const auth = require('../middlewares/auth');
 
 const AUTH_SERVICE_URL = "http://localhost:3001";
 
@@ -25,6 +26,15 @@ router.post("/verify", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const response = await axios.post(`${AUTH_SERVICE_URL}/auth/login`, req.body);
+    res.json(response.data);
+  } catch (err) {
+    res.status(err.response?.status || 500).json(err.response?.data || { error: err.message });
+  }
+});
+
+router.post("/change-password", auth(['user', 'admin']), async (req, res) => {
+  try {
+    const response = await axios.post(`${AUTH_SERVICE_URL}/auth/change-password`, req.body);
     res.json(response.data);
   } catch (err) {
     res.status(err.response?.status || 500).json(err.response?.data || { error: err.message });
