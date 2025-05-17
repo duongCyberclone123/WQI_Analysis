@@ -6,7 +6,6 @@ from typing import Dict
 from fastapi.middleware.cors import CORSMiddleware
 from sklearn.model_selection import train_test_split
 from xgboost import XGBRegressor
-import json
 from sqlalchemy import create_engine, text, Table, MetaData, update
 import pymysql
 
@@ -97,10 +96,73 @@ def read_items(data: InputData):
     prediction = my_model_clf.predict(df)
     return {"prediction": prediction.tolist()}
 
-@app.get("/")
+class CBInputData(BaseModel):
+    temperature: Dict[str, float]
+    pH: Dict[str, float]
+    DO: Dict[str, float]
+    conductivity: Dict[str, float]
+    alkalinity: Dict[str, float]
+    no2: Dict[str, float]
+    nh4: Dict[str, float]
+    po4: Dict[str, float]
+    h2s: Dict[str, float]
+    tss: Dict[str, float]
+    cod: Dict[str, float]
+    aeromonas_total: Dict[str, float]
+    edwardsiella_ictaluri: Dict[str, int]
+    aeromonas_hydrophila: Dict[str, int]
+    coliform: Dict[str, float]
+
+@app.post("/cb")
+def cb_model(data: CBInputData):
+    with open("model_CB.pkl", 'rb') as f:
+        cb_clf = pickle.load(f)
+    
+    # Prepare the dataframe
+    df = pd.DataFrame({k: list(v.values())[0] for k, v in data.dict().items()}, index=[0])
+    
+    # Ensure correct types for features
+    for col in df.columns:
+        if col in ['edwardsiella_ictaluri', 'aeromonas_hydrophila']:
+            # Convert categorical columns to integers (or strings if necessary)
+            df[col] = df[col].astype(int)
+        else:
+            # Convert other columns to floats
+            df[col] = df[col].astype(float)
+    
+    # Now the dataframe is properly formatted, we can make predictions
+    prediction = cb_clf.predict(df)
+    
+    return {"prediction": prediction.tolist()}
+
+@app.post("/mlp")
+def mlp_model(data: CBInputData):
+    with open("model_MLP.pkl", 'rb') as f:
+        cb_clf = pickle.load(f)
+    df = pd.DataFrame({k: list(v.values())[0] for k, v in data.dict().items()}, index=[0])
+    prediction = cb_clf.predict(df)
+    return {"prediction": prediction.tolist()}  
+
+@app.post("/et")
+def exTree_model(data: CBInputData):
+    with open("model_ET.pkl", 'rb') as f:
+        cb_clf = pickle.load(f)
+    df = pd.DataFrame({k: list(v.values())[0] for k, v in data.dict().items()}, index=[0])
+    prediction = cb_clf.predict(df)
+    return {"prediction": prediction.tolist()}  
+
+@app.post("/rf")
+def cb_model(data: CBInputData):
+    with open("model_RF.pkl", 'rb') as f:
+        cb_clf = pickle.load(f)
+    df = pd.DataFrame({k: list(v.values())[0] for k, v in data.dict().items()}, index=[0])
+    prediction = cb_clf.predict(df)
+    return {"prediction": prediction.tolist()}  
+
+@app.post("/")
 def read_root():
     return {"Hello": "World"}
 
-@app.get("/health")
+@app.post("/health")
 def health_check():
     return {"status": "healthy"}
