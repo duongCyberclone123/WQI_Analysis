@@ -1,23 +1,162 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import HeaderRes from "../components/HeaderRes";
+import StickyHeadTable from "../components/DataTable";
+import { Button, ButtonGroup } from "@mui/material";
+import {dv, lstCol, DateFormat} from '../utils/dataFeatures'
 
 export default function Report() {
     const [limitRecord, setLimitRecord] = useState(10);
-    const lstLimitRecord = [10, 20, 50, 100];
     const [dataset, setDataset] = useState([]);
     const [startIdx, setStartIdx] = useState(0);
     const [lb, setLb] = useState(0);
     const [ub, setUb] = useState(100);
     const [startDate, setStartDate] = useState("2022/01/01");
     const [endDate, setEndDate] = useState("2025/01/01");
+    const columns = [
+        { id: 'province', label: 'Province', minWidth: 100 },
+        {
+            id: 'district',
+            label: 'District',
+            minWidth: 170
+        },
+        {
+            id: 'observation_point',
+            label: 'Observed\u00a0Place',
+            minWidth: 170
+        },
+        {
+            id: 'place',
+            label: 'Place\u00a0No.',
+            minWidth: 80,
+            align: 'center',
+            format: (value) => value.toFixed(0),
+        },
+        {
+            id: 'coordinate',
+            label: 'Co-ordinate',
+            minWidth: 140,
+        },
+        {
+            id: 'date',
+            label: 'Date',
+            minWidth: 150,
+            format: (value) => DateFormat(value)
+        },
+        {
+            id: 'temperature',
+            label: `Temperature\u00a0(${dv[lstCol.indexOf('temperature')]})`,
+            minWidth: 100,
+            format: (value) => Number(value).toFixed(1)
+        },
+        {
+            id: 'pH',
+            label: 'pH',
+            minWidth: 80,
+            format: (value) => Number(value).toFixed(1)
+        },
+        {
+            id: 'DO',
+            label: `Disolved\u00a0Oxygen\u00a0(${dv[lstCol.indexOf('DO')]})`,
+            minWidth: 100
+        },
+        {
+            id: 'conductivity',
+            label: `Conductivity\u00a0${dv[lstCol.indexOf('conductivity')]}`,
+            minWidth: 120,
+            format: (value) => value.toFixed(1),
+        },
+        {
+            id: 'alkalinity',
+            label: `Alkalinity\u00a0(${dv[lstCol.indexOf('alkalinity')]})`,
+            minWidth: 120,
+            format: (value) => value.toFixed(1)
+        },
+        {
+            id: 'no2',
+            label: `N-NO2\u00a0(${dv[lstCol.indexOf('no2')]})`,
+            minWidth: 100,
+            format: (value) => value.toFixed(3)
+        },
+        {
+            id: 'po4',
+            label: `P-PO4\u00a0(${dv[lstCol.indexOf('po4')]})`,
+            minWidth: 100,
+            format: (value) => value.toFixed(3)
+        },
+        {
+            id: 'no2',
+            label: `N-NH4\u00a0(${dv[lstCol.indexOf('nh4')]})`,
+            minWidth: 100,
+            format: (value) => value.toFixed(3)
+        },
+        {
+            id: 'h2s',
+            label: `H2S\u00a0(${dv[lstCol.indexOf('h2s')]})`,
+            minWidth: 100,
+            format: (value) => value.toFixed(3)
+        },
+        {
+            id: 'tss',
+            label: `Total\u00a0suspended\u00a0solids\u00a0(${dv[lstCol.indexOf('tss')]})`,
+            minWidth: 100,
+            format: (value) => value.toFixed(1)
+        },
+        {
+            id: 'cod',
+            label: `Chemical\u00a0Oxygen\u00a0Demand\u00a0(${dv[lstCol.indexOf('cod')]})`,
+            minWidth: 100,
+            format: (value) => value.toFixed(1)
+        },
+        {
+            id: 'aeromonas_total',
+            label: `Aeromonas\u00a0Total\u00a0(${dv[lstCol.indexOf('aeromonas_total')]})`,
+            minWidth: 100,
+            format: (value) => value.toFixed(0)
+        },
+        {
+            id: 'edwardsiella_ictaluri',
+            label: `Edwardsiella\u00a0ictaluri`,
+            minWidth: 150,
+            format: (value) => (value === 1 ? "Dương tính" : "Âm tính")
+        },
+        {
+            id: 'aeromonas_hydrophila',
+            label: `Aeromonas\u00a0hydrophila`,
+            minWidth: 150,
+            format: (value) => (value === 1 ? "Dương tính" : "Âm tính")
+        },
+        {
+            id: 'coliform',
+            label: `Coliform\u00a0(${dv[lstCol.indexOf('coliform')]})`,
+            minWidth: 120,
+            format: (value) => value.toFixed(0)
+        },
+        {
+            id: 'wqi',
+            label: `Water\u00a0Quality\u00a0Index`,
+            minWidth: 100,
+            format: (value) => value.toFixed(0)
+        },
+        {
+            id: 'water_quality',
+            label: `Water\u00a0Quality\u00a0Rate`,
+            minWidth: 120,
+            format: (value) => (value == 0?"Rất tệ":
+                (value == 1 ? "Tệ" : 
+                (value == 2 ? "Trung bình" : 
+                (value == 3 ? "Khá tốt" : 
+                (value == 4 ? 
+                "Tốt" : "Xuất sắc")))))
+        },
+    ];
 
     useEffect(()=>{
         const fetchData = async() => {
             try {
                 const res = await axios.get("http://localhost:3002/analysis/fetch",{
                     params: {
-                        limit: limitRecord || 10,
+                        limit: 2000,
                         ub: ub || 100,
                         lb: lb || 0,
                         startDate: startDate || "2022/01/01",
@@ -97,7 +236,7 @@ export default function Report() {
     return (
         <>
             <HeaderRes />
-            <div className="filter" style={{marginTop: "150px"}}>
+            <div className="filter" style={{marginTop: "150px", marginLeft: "20px"}}>
                 <style>
                     {`
                     input[type="date"] {
@@ -198,164 +337,19 @@ export default function Report() {
                 </div>
                 
             </div>        
-            <div style={{marginTop: '30px', display: "flex", flexWWrap: "wrap", gap:"20px" }}>
-                <div style={{width: "100%", height: "500px", overflowY: "scroll", overflowX: "scroll"}}>
-                    <table style={{borderCollapse: 'collapse' }}>
-                        <thead>
-                            <tr>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>STT</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Province</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>District</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Observed Place</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Place No.</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Co-ordinate</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Date</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Temperature</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>pH</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Disolved Oxygen</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Conductivity</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Alkanity</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>NO2</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>PO4</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>NH4</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>H2S</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Total suspended solids</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Chemical Oxygen Demand</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Total Aeromonas</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Edwardsiella ictaluri</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Aeromonas hydrophila</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Coliform</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Water Quality Index</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Water Quality Rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {dataset.map((item, id) => (
-                                <tr key={id}>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{id + Number(startIdx) + 1}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.province}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.district}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.observation_point}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.place}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.coordinate}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{DateFormat(item.date)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{Number(item.temperature).toFixed(2)} &#8451;</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{Number(item.pH).toFixed(1)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{Number(item.DO).toFixed(1)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.conductivity}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{Number(item.alkalinity).toFixed(2)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{Number(item.no2).toFixed(4)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{Number(item.po4).toFixed(4)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{Number(item.nh4).toFixed(4)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{Number(item.h2s).toFixed(4)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{Number(item.tss).toFixed(1)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{Number(item.cod).toFixed(1)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.aeromonas_total < 1 ? Number(item.aeromonas_total).toFixed(1) : Number(item.aeromonas_total).toFixed(0)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.edwardsiella_ictaluri == 0 ? "Âm tính" : "Dương tính"}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.aeromonas_hydrophila == 0 ? "Âm tính" : "Dương tính"}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.coliform < 1 ? Number(item.coliform).toFixed(1) : Number(item.coliform).toFixed(0)}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.wqi}</td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center',}}>{item.water_quality == 0?"Rất tệ":(item.water_quality == 1 ? "Tệ" : (item.water_quality == 2 ? "Trung bình" : (item.water_quality == 3 ? "Khá tốt" : (item.water_quality == 4 ? "Tốt" : "Xuất sắc"))))}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                    <div></div>
-                </div>
+            <div style={{ display: "flex", flexWWrap: "wrap", gap:"20px", margin: "20px"}}>
+                <StickyHeadTable rows = {dataset} columns={columns} page={startIdx} setPage={setStartIdx} rowsPerPage={limitRecord} setRowsPerPage={setLimitRecord} />
                 <div style={{width: "2px", height: "500px", backgroundColor: "#000"}}></div>
-                <div>
-                    <style>
-                        {`
-                            .PDF:hover {
-                                background-color: #7D383F;
-                                color: white;
-                                cursor: pointer;
-                            }
-                            .Excel:hover {
-                                background-color: #68B0AB;
-                                color: white;
-                                cursor: pointer;
-                            }
-                        `}
-                    </style>
-                    <div className="PDF" style={{width: "100px", height: "30px", border: "2px solid #09192A", justifyContent: "center", textAlign: "center", justifyItems: "center", alignItems:"center", marginBottom: "30px", borderRadius: "10px", backgroundColor: "#FF9AA2", paddingTop: "10px"}} onClick={() => downloadPDF()}>PDF</div>
-                    <div className="Excel" style={{width: "100px", height: "30px", border: "2px solid #09192A", justifyContent: "center", textAlign: "center", justifyItems: "center", alignItems:"center", marginBottom: "30px", borderRadius: "10px", backgroundColor: "#B5EAD7", paddingTop: "10px"}} onClick={() => downloadExcel()}>Exel</div>
-                    <div></div>
-                </div>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "20px" }}>
-                <style>
-                    {`
-                    select {
-                        appearance: none;
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-
-                        padding: 10px 15px;
-                        font-size: 16px;
-                        border: 1px solid #ccc;
-                        border-radius: 8px;
-                        background-color: #fff;
-                        color: #333;
-                        min-width: 100px;
-
-                        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-                        transition: border-color 0.3s, box-shadow 0.3s;
-
-                        background-image: url("data:image/svg+xml,%3Csvg fill='gray' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-                        background-repeat: no-repeat;
-                        background-position: right 10px center;
-                        background-size: 12px;
-                        padding-right: 35px;
-                    }
-
-                    select:focus {
-                        border-color: #4a90e2;
-                        outline: none;
-                        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
-                    }
-
-                    .nav-button {
-                        background-color: #4a90e2;
-                        color: white;
-                        border: none;
-                        padding: 10px 15px;
-                        border-radius: 6px;
-                        cursor: pointer;
-                        font-weight: 500;
-                        transition: background-color 0.3s, transform 0.2s;
-                    }
-
-                    .nav-button:hover {
-                        background-color: #357ab8;
-                        transform: scale(1.03);
-                    }
-
-                    .nav-button:disabled {
-                        background-color: #ccc;
-                        cursor: not-allowed;
-                    }
-                    `}
-                </style>
-
-                <select value={limitRecord} onChange={(e) => {setLimitRecord(e.target.value); setStartIdx(0);}}>
-                    {lstLimitRecord.map((item, id) => (
-                    <option key={id} value={item}>{item}</option>
-                    ))}
-                </select>
-
-                <button
-                    className="nav-button"
-                    onClick={() => setStartIdx(Number(startIdx) - Number(limitRecord) <= 0 ? Number(startIdx) : Number(startIdx) - Number(limitRecord))}
-                >
-                    Prev
-                </button>
-                <button
-                    className="nav-button"
-                    onClick={() => {setStartIdx(Number(startIdx) + Number(limitRecord) >= 1612 ? Number(startIdx) : Number(startIdx) + Number(limitRecord)); console.log(startIdx)}}
-                >
-                    Next
-                </button>
+                <ButtonGroup variant="outlined" aria-label="Loading button group" sx={{height: 40}}>
+                    <Button onClick={() => downloadPDF()} sx={{'&:hover': {
+                        color: '#fff',
+                        backgroundColor: '#D41545' // màu khi hover
+                        }}}>PDF</Button>
+                    <Button onClick={() => downloadExcel()} sx={{'&:hover': {
+                        color: '#fff',
+                        backgroundColor: '#7FFF00' // màu khi hover
+                        }}}>Excel</Button>
+                </ButtonGroup>
             </div>
         </>
     );

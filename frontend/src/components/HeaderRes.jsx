@@ -2,6 +2,11 @@ import { useState, useEffect, React } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../style/header.css'
+import {
+    AccountCircle, Home, AutoGraph, 
+    CodeTwoTone, Report, ManageAccountsTwoTone, LogoutTwoTone
+} from '@mui/icons-material';
+
 
 export default function HeaderRes() {
     const navigate = useNavigate();
@@ -80,7 +85,7 @@ export default function HeaderRes() {
                 <a href="/dashboard">Dashboard</a>
                 <a href="/model">AI Model</a>
                 <a href="/report">Report</a>
-                <a href="#" onClick={(e) => {e.preventDefault(); toggleDropDown()}}><img src="/assets/ava.png"  width="70px"/></a>
+                <a href="#" onClick={(e) => {e.preventDefault(); toggleDropDown()}}>Account</a>
             </nav>
             {bar ? 
                 (
@@ -95,20 +100,31 @@ export default function HeaderRes() {
         {showSidebar && (
             <>
             <div className="sidebar">
-                <a href="#" style={{justifyItems: "center"}}><img src="/assets/ava.png" width="70px" /></a>                
-                <a href="/home" onClick={toggleSidebar}>Home</a>
-                <a href="/dashboard" onClick={toggleSidebar}>Dashboard</a>
-                <a href="/model" onClick={toggleSidebar}>AI Model</a>
-                <a href="/report" onClick={toggleSidebar}>Report</a>
+                <div style={{alignItems: "center", display: "flex", gap: "0px"}}>
+                    <AccountCircle sx={{fontSize: 30, color: '#fff'}} /> 
+                    <a href="#" onClick={(e) => {e.preventDefault(); toggleDropDown()}}>Account</a>                
+                </div>
+                <div style={{alignItems: "center", display: "flex", gap: "0px"}}>
+                    <Home sx={{fontSize: 30, color: '#fff'}} /> 
+                    <a href="/home" onClick={toggleSidebar}>Home</a>             
+                </div>
+                <div style={{alignItems: "center", display: "flex", gap: "0px"}}>
+                    <AutoGraph sx={{fontSize: 30, color: '#fff'}} /> 
+                    <a href="/dashboard" onClick={toggleSidebar}>Dashboard</a>             
+                </div>
+                <div style={{alignItems: "center", display: "flex", gap: "0px"}}>
+                    <CodeTwoTone sx={{fontSize: 30, color: '#fff'}} /> 
+                    <a href="/model" onClick={toggleSidebar}>AI Model</a>             
+                </div>
+                <div style={{alignItems: "center", display: "flex", gap: "0px"}}>
+                    <Report sx={{fontSize: 30, color: '#fff'}} /> 
+                    <a href="/report" onClick={toggleSidebar}>Report</a>             
+                </div>
+                <div style={{alignItems: "center", display: "flex", gap: "0px"}}>
+                    <LogoutTwoTone sx={{fontSize: 30, color: '#fff'}} /> 
+                    <a href="#" onClick={(e) => {e.preventDefault(); Logout() ;navigate("/home")}}>Đăng xuất</a>             
+                </div>
             </div>
-            {bar ? 
-                (
-                <nav className="side-side">
-                    <a href="/pass">Đổi mật khẩu</a>
-                    <a href="#" onClick={(e) => {e.preventDefault(); Logout() ;navigate("/home")}}>Đăng xuất</a>
-                </nav>
-                ):null
-            }
             </>
             
         )}

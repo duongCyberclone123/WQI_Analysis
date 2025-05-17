@@ -5,6 +5,7 @@ import AIChatbot from "../components/AIChatbot";
 import { useRef } from "react";
 import '../style/model.css'
 import { lstCol, dv } from "../utils/dataFeatures";
+import StickyHeadTable from "../components/DataTable"
 
 export default function Modeling() {
 
@@ -24,30 +25,30 @@ export default function Modeling() {
     const [edward, setEdward] = useState("Positive")
     const [aero, setAero] = useState("Positive")
     const [coliform, setColiform] = useState("")
-    const [wqi, setWqi] = useState(0)
+    const [limitRecord, setLimitRecord] = useState(10);
+    const [startIdx, setStartIdx] = useState(0);
+
+    const colums = [
+        {
+            id: 'model',
+            label: 'Model',
+        },
+        {
+            id: 'value',
+            label: 'Predicted Value',
+            format: (value) => value.toFixed(2)
+        },
+        {
+            id: 'rate',
+            label: 'Water Quality Rate',
+        }
+    ]
+
+    const [rows, setRows] = useState([])
 
     const handlePrediction = async () => {
-        console.log("JSON data: ", {
-            place: { "location1": placeNo },
-            temperature: { "location1": temp },
-            pH: { "location1": pH },
-            DO: { "location1": DO },
-            conductivity: { "location1": con },
-            alkalinity: { "location1": alkan },
-            no2: { "location1": no2 },
-            nh4: { "location1": nh4 },
-            po4: { "location1": po4 },
-            h2s: { "location1": h2s },
-            tss: { "location1": tss },
-            cod: { "location1": cod },
-            aeromonas_total: { "location1": totalAe },
-            edwardsiella_ictaluri: { "location1": edward == "Positive" ? 1 : 0 },
-            aeromonas_hydrophila: { "location1": aero == "Positive" ? 1 : 0 },
-            coliform: { "location1": coliform }
-        });
         try {
-            const res = await axios.post("http://localhost:8000/test",
-                {
+            const params = {
                     place: { "location1": Number(placeNo) },
                     temperature: { "location1": Number(temp) },
                     pH: { "location1": Number(pH) },
@@ -64,38 +65,98 @@ export default function Modeling() {
                     edwardsiella_ictaluri: { "location1": Number(edward == "Positive" ? 1 : 0) },
                     aeromonas_hydrophila: { "location1": Number(aero == "Positive" ? 1 : 0) },
                     coliform: { "location1": Number(coliform) }
-                },
+                }
+            const xgb = await axios.post("http://localhost:8000/test",
+                params,
                 {
-                    HeaderResResResRess: {
+                    headers: {
                         'Content-Type': 'application/json'
                     }
                 }
             );
-            await axios.post("http://localhost:3002/analysis/insert", {
-                place: placeNo,
-                temperature: temp,
-                pH: pH,
-                DO: DO,
-                conduct: con,
-                alkan: alkan,
-                no2: no2,
-                nh4: nh4,
-                po4: po4,
-                h2s: h2s,
-                tss: tss,
-                cod: cod,
-                aero_total: totalAe,
-                edward: edward == "Positive" ? 1 : 0,
-                aero_hydro: aero == "Positive" ? 1 : 0,
-                coliform: coliform,
-                wqi: res.data.prediction[0],
-            }, {
-                HeaderResResResRess: {
-                    'Content-Type': 'application/json'
+            const params2 = {
+                    temperature: { "location1": Number(temp) },
+                    pH: { "location1": Number(pH) },
+                    DO: { "location1": Number(DO) },
+                    conductivity: { "location1": Number(con) },
+                    alkalinity: { "location1": Number(alkan) },
+                    no2: { "location1": Number(no2) },
+                    nh4: { "location1": Number(nh4) },
+                    po4: { "location1": Number(po4) },
+                    h2s: { "location1": Number(h2s) },
+                    tss: { "location1": Number(tss) },
+                    cod: { "location1": Number(cod) },
+                    aeromonas_total: { "location1": Number(totalAe) },
+                    edwardsiella_ictaluri: { "location1": Number(edward == "Positive" ? 1 : 0) },
+                    aeromonas_hydrophila: { "location1": Number(aero == "Positive" ? 1 : 0) },
+                    coliform: { "location1": Number(coliform) }
                 }
-            });
-            console.log(res.data);
-            setWqi(res.data.prediction[0]);
+            const cb = await axios.post("http://localhost:8000/cb",
+                params2,
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+            const et = await axios.post("http://localhost:8000/et",
+                params2,
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+            const rf = await axios.post("http://localhost:8000/rf",
+                params2,
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+            setRows([
+                {
+                    model: 'XGBoost',
+                    value: xgb.data.prediction[0],
+                    rate: xgb.data.prediction[0] < 10 ? "Rất tệ" : 
+                    (xgb.data.prediction[0] < 20 ? "Tệ" : 
+                    (xgb.data.prediction[0] < 50 ? 
+                    "Trung bình": 
+                    (xgb.data.prediction[0] < 70? "Khá tốt" : 
+                    (xgb.data.prediction[0] < 90 ? "Tốt" : "Rất tốt"))))
+                },
+                {
+                    model: 'CatBoost',
+                    value: cb.data.prediction[0],
+                    rate: cb.data.prediction[0] < 10 ? "Rất tệ" : 
+                    (cb.data.prediction[0] < 20 ? "Tệ" : 
+                    (cb.data.prediction[0] < 50 ? 
+                    "Trung bình": 
+                    (cb.data.prediction[0] < 70? "Khá tốt" : 
+                    (cb.data.prediction[0] < 90 ? "Tốt" : "Rất tốt"))))
+                },
+                {
+                    model: 'Extra\u00a0Trees',
+                    value: et.data.prediction[0],
+                    rate: et.data.prediction[0] < 10 ? "Rất tệ" : 
+                    (et.data.prediction[0] < 20 ? "Tệ" : 
+                    (et.data.prediction[0] < 50 ? 
+                    "Trung bình": 
+                    (et.data.prediction[0] < 70? "Khá tốt" : 
+                    (et.data.prediction[0] < 90 ? "Tốt" : "Rất tốt"))))
+                },
+                {
+                    model: 'Random Forest',
+                    value: rf.data.prediction[0],
+                    rate: rf.data.prediction[0] < 10 ? "Rất tệ" : 
+                    (rf.data.prediction[0] < 20 ? "Tệ" : 
+                    (rf.data.prediction[0] < 50 ? 
+                    "Trung bình": 
+                    (rf.data.prediction[0] < 70? "Khá tốt" : 
+                    (rf.data.prediction[0] < 90 ? "Tốt" : "Rất tốt"))))
+                }
+            ])
         } catch (error) {
             console.error(error.response?.data || error.message);
             alert("Lỗi khi gọi API: " + error.message);
@@ -122,7 +183,7 @@ export default function Modeling() {
             </style>
             <div className="head-tag">
                 <span></span>
-                <h1><b>WQI PREDICTION</b> <span style={{textAlign: "right", width:"80%"}}><a href="#">Chi tiết</a></span></h1>
+                <h1><b>WQI PREDICTION</b></h1>
             </div>
             <div style={{marginTop: '30px', display: "flex", flexWWrap: "wrap", gap:"20px" }}>
             <div className="content">
@@ -398,27 +459,8 @@ export default function Modeling() {
                     </div>
 
                     <div style={{width: "4px", height: "140px", backgroundColor: "#ccc"}} ref={refB}></div>
-                    <div style={{height: "140px"}}>
-                        <table style={{borderCollapse: 'collapse' }}>
-                            <thead>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Model</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Water Quality Index</th>
-                                <th style={{border: '1px solid #ccc', padding: '8px', backgroundColor: '#f2f2f2',}}>Water Quality Rate</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px", color:"#fff"}}>
-                                        XGBoost
-                                    </td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px", color:"#fff"}}>
-                                        {wqi}
-                                    </td>
-                                    <td style={{border: '1px solid #ccc', padding: '8px', textAlign: 'center', height: "20px", color:"#fff"}}>
-                                        {wqi < 10 ? "Rất tệ" : (wqi < 20 ? "Tệ" : (wqi < 50 ? "Trung bình": (wqi <70? "Khá tốt" : (wqi <90 ? "Tốt" : "Rất tốt"))))}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div ref={refB}>
+                        <StickyHeadTable rows = {rows} columns={colums} page={startIdx} setPage={setStartIdx} rowsPerPage={limitRecord} setRowsPerPage={setLimitRecord} />
                     </div>
                     <style>
                     {`
