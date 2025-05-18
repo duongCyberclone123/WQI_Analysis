@@ -75,7 +75,7 @@ This service is used to make prediction based on the data client sends to server
 cd AI_Model
 docker build -t ai_model:v1 .
 ```
-### *Build Docker Container*
+### *4. Build Docker Container*
 Run this command in project level.
 ```
 docker compose up -d
