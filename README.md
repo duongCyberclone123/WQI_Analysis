@@ -34,6 +34,10 @@ In this project, there are five machine learning models used to make prediction 
    - Definition: XGBoost is a highly efficient and scalable gradient boosting library that builds decision trees sequentially, where each tree tries to correct the errors of the previous one.
    - Google Colab: [XGBoost](https://drive.google.com/file/d/1IuMySq1qHPanBBubMapYQZIuYXkyPZJG/view?usp=sharing)
 # **Application settings**
+Firtly, clone this project from GitHub.
+```
+git clone https://github.com/duongCyberclone123/WQI_Analysis
+```
 ## **_Docker Container_**
 ### *Frontend/Client*
 Build Docker image for Frontend
