@@ -39,13 +39,13 @@ Firtly, clone this project from GitHub.
 git clone https://github.com/duongCyberclone123/WQI_Analysis
 ```
 ## **_Docker Container_**
-### *Frontend/Client*
+### *1. Frontend/Client*
 Build Docker image for Frontend
 ```
 cd frontend
 docker build -t fe:v1 .
 ```
-### *Backend/Server*
+### *2. Backend/Server*
 The backend is built based on a microservices architecture. 
 Build Docker image for each service.
 At first, touch the backend folder.
@@ -69,7 +69,7 @@ This service is used to answer client's questions. This service is based on Gemi
 cd chatbot_service
 docker build -t chatbot_service:v1 .
 ```
-### *AI Model*
+### *3. AI Model*
 This service is used to make prediction based on the data client sends to server.
 ```
 cd AI_Model
