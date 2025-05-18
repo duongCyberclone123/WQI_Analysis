@@ -3,8 +3,9 @@ A responsive web-based application, using Machine Learning to analyze and predic
 ![WQR LABORATORY](https://github.com/user-attachments/assets/45acb8a1-23a6-4b95-a1b2-5d6879fbf166)
 # **Table of content**
  - [1. Technologies](#Technologies)
- - [2. Machine Learning Model](#Machine-Learning-Model)
- - [3. Application settings](#Application-settings)
+ - [2. Project Structure](#Project-Structure)
+ - [3. Machine Learning Model](#Machine-Learning-Model)
+ - [4. Application settings](#Application-settings)
 # **Technologies**
 | Technology| Used in       |
 |-----------|---------------|
@@ -16,6 +17,51 @@ A responsive web-based application, using Machine Learning to analyze and predic
 | MySql   | DBMS      |
 | Docker  | Deployment       |
 | Railway   | Deployment       |
+| Google Colab   | Machine Learning       |
+# **Project Structure**
+```
+WQI_Analysis/
+├── AI_Model/
+|  ├── main.py
+|  ├── model.pkl
+|  ├── requirements.txt
+|  ├── Dockerfile
+|  └── .gitignore
+├── backend/
+|  ├── analysis/
+|      ├── service/
+|      ├── controller/
+|      ├── route/
+|      ├── Dockerfile
+|      └── server.js
+|  ├── auth_service/
+|      ├── service/
+|      ├── controller/
+|      ├── route/
+|      ├── Dockerfile
+|      └── server.js
+|  ├── chatbot_service/
+|      ├── service/
+|      ├── controller/
+|      ├── route/
+|      ├── Dockerfile
+|      └── server.js
+├── frontend/
+|  ├── public/
+|      ├── assets/
+|      └── index.html
+|  ├── src/
+|      ├── admin/
+|      ├── components/
+|      ├── pages/
+|      ├── style/
+|      ├── utils/
+|      ├── App.jsx
+|      ├── nginx.conf
+|      └── Dockerfile
+├── docker-compose.yml
+└── .gitignore
+```
 # **Machine Learning Model**
 In this project, there are five machine learning models used to make prediction of WQI (Water Quality Index):
 1. CatBoost (Categorical Boosting)
